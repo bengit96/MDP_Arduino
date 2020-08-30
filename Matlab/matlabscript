@@ -1,0 +1,120 @@
+
+y_a1 = RPM_1.Speed(1:8);
+x_a1 = 1 ./ RPM_1.RPM(1:8)  * 10^6 * 60 / 562.25; % rmb to multiply by 2 if is pulse
+
+y_a2 = RPM_1.Speed_1(1:8);
+x_a2 = 1 ./ RPM_1.RPM_1(1:8) * 10^6 * 60 / 562.25;
+
+coefficients_a1 = polyfit(x_a1, y_a1, 1);
+xFit = linspace(min(x_a1), max(x_a1), 1000);
+yFit = polyval(coefficients_a1 , xFit);
+figure(1);
+hold on;
+scatter(x_a1,y_a1);
+plot(xFit, yFit, 'r-', 'LineWidth', 2);
+
+coefficients_a2 = polyfit(x_a2, y_a2, 1);
+xFit = linspace(min(x_a2), max(x_a2), 1000);
+yFit = polyval(coefficients_a2 , xFit);
+figure(2);
+hold on;
+plot(xFit, yFit, 'r-', 'LineWidth', 2);
+scatter(x_a2,y_a2);
+
+
+t = 0:0.005:5; %create 1000 columns worth of time
+y_left = RPM_1.left(1:length(RPM_1.left(~isnan(RPM_1.left))));
+y_left = 1 ./ y_left  * 10^6 * 60 / 562.25;
+x_left = t(1:length(y_left));
+y_median_l1 = median(y_left(1:100)) * ones(100,1);
+y_median_l2 = median(y_left(end-100:end)) * ones(length(x_left));
+x_fit = x_left(101:length(x_left));
+y_fit = y_left(101:length(y_left));
+%x_fit = x_left(101:130);
+%y_fit = y_left(101:130);
+f = fit(x_fit(:),y_fit,'exp2');
+
+y_curve = f(x_fit);
+%inflection point = maximum of gradient vector
+d1y = differentiate(f,x_fit);
+% d1y = gradient(y_fit,x_fit);                                            % Numerical Derivative
+d2y = del2(y_curve,x_fit)
+t_infl = interp1(d1y,x_fit, d1y(6)); % Find xt_ At Maximum Of First Derivative
+y_infl = interp1(x_fit, y_curve, t_infl); % Find xy_ At Maximum Of first Derivative
+slope  = interp1(x_fit, d1y, t_infl); % Slope Defined Here As Maximum Of First Derivative
+intcpt = y_infl - slope*t_infl; % Calculate Intercept
+tngt = slope*x_fit + intcpt;  
+figure(3)
+hold on 
+plot(x_left(1:100),y_median_l1,'r-');
+plot(x_left,y_median_l2,'r-');
+plot(x_left,y_left,'b-');
+plot(f,x_left(101:length(x_left)),y_left(101:length(y_left)),'g-');
+%plot(f,x_left(101:130),y_left(101:130),'g-');
+plot(x_fit(1:20), tngt(1:20), '-k', 'LineWidth',1); % Plot Tangent Line
+plot(t_infl, y_infl, 'bp'); % Plot when Slope = 0
+hleg = legend("Figure 3"); 
+set(hleg,'visible','off')
+hold off
+
+
+y_right = RPM_1.right(1:length(RPM_1.right(~isnan(RPM_1.right))));
+y_right = 1 ./ y_right  * 10^6 * 60 / 562.25
+x_right = t(1:length(y_right));
+y_median_r1 = median(y_right(1:100)) * ones(100,1);
+y_median_r2 = median(y_right(end-100:end)) * ones(length(x_right));
+x_fitr = x_right(101:length(x_right));
+y_fitr = y_right(101:length(y_right));
+%x_fitr = x_right(101:130);
+%y_fitr = y_right(101:130);
+fr = fit(x_fitr(:),y_fitr,'exp2');
+
+y_curver = fr(x_fitr);
+%inflection point = maximum of gradient vector
+d1yr = differentiate(fr,x_fitr);
+% d1y = gradient(y_fit,x_fit);                                            % Numerical Derivative
+d2yr = del2(y_curver,x_fitr)
+t_inflr = interp1(d1yr,x_fitr, d1yr(6)); % Find xt_ At Maximum Of First Derivative
+y_inflr = interp1(x_fitr, y_curver, t_inflr); % Find xy_ At Maximum Of first Derivative
+sloper  = interp1(x_fitr, d1yr, t_inflr); % Slope Defined Here As Maximum Of First Derivative
+intcptr = y_inflr - sloper*t_inflr; % Calculate Intercept
+tngtr = sloper*x_fitr + intcptr;  
+figure(4)
+hold on
+plot(x_right(1:100),y_median_r1,'r-');
+plot(x_right,y_median_r2,'r-');
+plot(x_right,y_right,'b-');
+plot(fr,x_right(101:length(x_right)),y_right(101:length(y_right)),'g-');
+%plot(f,x_left(101:130),y_left(101:130),'g-');
+plot(x_fitr(1:20), tngtr(1:20), '-k', 'LineWidth',1); % Plot Tangent Line
+plot(t_inflr, y_inflr, 'bp'); % Plot when Slope = 0
+hleg = legend("Figure 3"); 
+set(hleg,'visible','off')
+hold off
+
+%tngt = slope*x_fit + intcpt;  
+
+tmp_time = (y_median_l2(1)- intcpt)/slope; 
+
+ts = t_infl - 0.5;
+td = tmp_time - t_infl
+kl = (y_median_l2(1) - y_median_l1(1) )/50;
+
+disp(coefficients_a1);
+disp(coefficients_a2);
+disp(ts);
+disp(td);
+disp(kl);
+
+tmp_time = (y_median_r2(1)- intcptr)/sloper; 
+
+tsr = t_inflr - 0.5;
+tdr = tmp_time - t_inflr
+klr = (y_median_r2(1) - y_median_r1(1) )/50;
+
+disp(tsr);
+disp(tdr);
+disp(klr);
+
+
+%tngtr
