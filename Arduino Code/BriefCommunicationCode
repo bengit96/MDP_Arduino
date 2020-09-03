@@ -1,0 +1,25 @@
+//Brief Code for RPI Communication
+
+loop(){
+	while(Serial.available() < 0); // loop while no instructions
+	String data = Serial.readStringUntil('\n');
+	int gridNum = data.charAt(1); //not sure starts at 0 or 1
+	char actions = data.charAt(0); //not sure starts at 0 or 1
+	switch (data) { // think can only do char or integer
+		case "w": //not sure if case sensitive affects
+			en.moveForward(l_speed,r_speed,md,mv,gridNum);
+			break;
+		case "a":
+			en.moveLeft(l_speed,r_speed,md,mv);
+			en.moveForward(l_speed,r_speed,md,mv,gridNum);
+			break;
+		case "d":
+			en.moveRight(l_speed,r_speed,md,mv);
+			en.moveForward(l_speed,r_speed,md,mv,gridNum);
+			break;
+		default: 
+			Serial.print("No condition for "); Serial.println(data);
+			break;
+	}
+	// Every 10 grids will output back a sensor value
+}

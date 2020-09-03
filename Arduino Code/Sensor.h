@@ -2,7 +2,6 @@ class Sensor{
 	private:
 	public:
 		Sensor();
-		void wallHugging(long l_speed,long r_speed);
 		void rotateRight(int sensDiff, long l_speed, long r_speed);
 		void rotateLeft(int sensDiff, long l_speed, long r_speed);
 		void moveRight(int x,long l_speed,long r_speed);

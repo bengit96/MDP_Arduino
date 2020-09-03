@@ -35,8 +35,9 @@ class Encoder {
     void printTime();
     void rampUp(long rpm, DualVNH5019MotorShield md, Movement m);
     void moveForwardHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int distance);
-    void moveBackHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int distance);
     long unsigned int bubbleSort(int numIteration, unsigned long * timeWidth);
     void moveLeftHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv);
     void moveRightHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv);
+    void wallHugging(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, Sensor sensor);
+
 };	

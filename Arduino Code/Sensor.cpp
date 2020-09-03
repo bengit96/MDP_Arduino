@@ -15,60 +15,6 @@ Sensor::Sensor(){
 }
 
 
-void Sensor::wallHugging(long l_speed, long r_speed){
-	  int sensorA1 = LFDistance(1); // left front
-  	int sensorA2 = LBDistance(1); // left back
-  	int checked = 0;
-  	//Check if front and back is aligned
-  	while(checked == 0){
-  		Serial.println("calibrating");
-	  	checked = 1; // if entered either of the loops, check again
-	  	while(sensorA1 != sensorA2){
-	  		if(sensorA1 <= sensorA2){ // if sensorA1 is closer to wall than sensorA2	  	
-	  			rotateRight(sensorA2-sensorA1, l_speed, r_speed);
-	  		}
-	  		else{
-	  			rotateLeft(sensorA1-sensorA2, l_speed, r_speed);
-	  		}
-	  		checked = 0;
-	  	}
-		//check if it is 5 cm
-	  	while(sensorA1 != 5){
-	  	  	if(sensorA1 <= 5){ // if sensorA1 is closer to wall than sensorA2
-	  			moveRight(5-sensorA1, l_speed, r_speed);
-	  		}
-	  		else{
-	  			moveLeft(sensorA1-5, l_speed, r_speed);
-	  		}	
-	  		checked = 0;
-	  	}
-	}
-}
-
-void Sensor:: rotateRight(int sensDiff, long l_speed, long r_speed){
-	//md.setSpeeds(l_speed,-r_speed);
-	delay(1);
-	//md.setBrakes(l_speed,-r_speed);
-}
-
-void Sensor:: rotateLeft(int sensDiff, long l_speed, long r_speed){
-	//md.setSpeeds(-l_speed,r_speed);
-	delay(1);
-	//md.setBrakes(-l_speed,r_speed);	
-}
-
-void Sensor::moveRight(int x,long l_speed, long r_speed){
-	//Turn right
-	//move forward by x cm
-	//turn left
-}
-
-void Sensor::moveLeft(int x,long l_speed,long r_speed){
-	//turn left
-	//move forward by x cm
-	//turn right
-}
-
 float Sensor::FMDistance(int method) {
   float distance;
   if (method == 1) {

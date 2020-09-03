@@ -30,5 +30,7 @@ class Movement {
 		//void moveForward(long setLSpeed, long setRSpeed, Encoder en , DualVNH5019MotorShield md);
 	    float convertLSpeed(float rpm);
 	    float convertRSpeed(float rpm);
+      float convertRRPM(float rspeed);
+      float convertLRPM(float lspeed);
 	    void resetDistance();
 };	
