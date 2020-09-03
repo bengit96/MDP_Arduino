@@ -80,22 +80,27 @@ float Movement::computeL(long setLSpeed, unsigned long ltime){
     errorL[0] = errorL[1];
     errorL[1] = currentError;
   }
+  //float u = currentRPM + k1 * currentError + k2 * previousLError + k3 * previousLError2;
+  
   float u = currentRPM + k1 * currentError; //+ k2 * previousLError + k3 * previousLError2;
   if( u <= 0 ){
     u = 0;
   }
-  if(u >= 130){
-    u = 130;
+  if(u >= 120){
+    u = 120;
   }
   float returnSpeed = convertLSpeed(u);
-  
-  Serial.println(k1);
-  Serial.println(k2);
-  Serial.println(k3);
-  Serial.println(currentError);
-  Serial.println(currentRPM);
-  Serial.println(u);
-  
+  /*
+  Serial.print("lk1");Serial.println(k1);
+  Serial.print("lk2");Serial.println(k2);
+  Serial.print("lk3");Serial.println(k3);
+  Serial.print("u");Serial.println(u);
+  Serial.print("previouslerror");Serial.println(previousLError);
+  Serial.print("previouslerror2");Serial.println(previousLError2);
+  Serial.print("l current error");Serial.println(currentError);
+  Serial.print("l current rpm");Serial.println(currentRPM);
+  Serial.print("l output rpm");Serial.println(u);
+  */
   previousLError = currentError;
   return returnSpeed;
 }
@@ -122,14 +127,25 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
     errorR[1] = currentError;
   }
 
+  //float u = currentRPM + k1 * currentError + k2 * previousRError + k3 * previousRError2;
   float u = currentRPM + k1 * currentError;// + k2 * previousRError + k3 * previousRError2;
-  if( u >= 130 ){
-    u = 130;
+  if( u >= 120 ){
+    u = 120;
   }
   if(u <= 0){
     u = 0;
-  } 
-  Serial.println(k1);
+  }
+  /*
+  Serial.print("rk1");Serial.println(k1);
+  Serial.print("rk2");Serial.println(k2);
+  Serial.print("rk3");Serial.println(k3);
+  Serial.print("u");Serial.println(u);
+  Serial.print("previousrerror");Serial.println(previousRError);
+  Serial.print("previousrerror2");Serial.println(previousRError2);  
+  Serial.print("r current error");Serial.println(currentError);
+  Serial.print("r current rpm");Serial.println(currentRPM);
+  Serial.print("r output rpm");Serial.println(u);
+  */
   float returnSpeed = convertRSpeed(u);
   previousRError = currentError;
   return returnSpeed;
@@ -169,14 +185,14 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
 */
 
 float Movement::convertLSpeed(float rpm){ // negative speed. I dun think we need backwards movement?
-  float m = -2.7814; //change according to gradient
-  float c = -21.8053; // change according to y intercept
+  float m =  -2.8323; //change according to gradient
+  float c = -34.1964; // change according to y intercept
   return (rpm*m + c);
 }
 
 float Movement::convertRSpeed(float rpm){ //positive speed
-  float m = 2.8291; //change according to gradient
-  float c = 17.4258; // change according to y intercept
+  float m = 2.8739; //change according to gradient
+  float c = 39.3271; // change according to y intercept
   return (rpm*m + c);
 }
 
