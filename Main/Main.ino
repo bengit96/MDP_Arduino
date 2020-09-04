@@ -49,16 +49,6 @@ Sensor sensor;
 static volatile unsigned long ltime_tmp = 0; // volatile will tell the compiler that the value must be checked every time
 static volatile unsigned long rtime_tmp = 0;  
 
-
-
-
-double sensorCal(int sensor_pin){
-  double raw = analogRead(sensor_pin);
-  delay(1000);
-  return raw;
-}
-
-
 void leftmotor(){
   en.ltickIncrement();
 }
@@ -90,7 +80,7 @@ void setup(){
   Serial.println(m1_speed);
   Serial.println(m2_speed);  
   */
-  // Serial.println("Dual VNH5019 Motor Shield");
+  // Initialization
   md.init();
   en.init();
   enableInterrupt(en.pinA1, leftmotor, RISING);
@@ -104,15 +94,15 @@ void setup(){
     delay(1000);
     exit(1);
   }else{
-    Serial.println("not calibrating");
+    Serial.println("Not calibrating...");
   }
   
   
   float rpm = 50; // change accordingly
   l_speed = mv.convertLSpeed(rpm); // change this functions based on gradient found and y intercept
   r_speed = mv.convertRSpeed(rpm); // change this functions based on gradient found and y intercept
-  Serial.print("l_speed");Serial.println(l_speed); // put the speeds into moveForward function
-  Serial.print("r_speed");Serial.println(r_speed);
+  Serial.print("l_speed: ");Serial.println(l_speed); // put the speeds into moveForward function
+  Serial.print("r_speed: ");Serial.println(r_speed);
   
 }
 
@@ -121,18 +111,20 @@ void loop() {
   //Serial.println(sensor.LFDistance(1));
   //Serial.println(sensor.LBDistance(1));
 
-  //en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
-  //en.moveForward(l_speed,r_speed,md,mv,3);
-    en.moveRight(l_speed,r_speed,md,mv,90);
-    delay(1000);
-    en.moveLeft(l_speed,r_speed,md,mv,90);
-    delay(1000);
-    en.moveRight(l_speed,r_speed,md,mv,45);
-    delay(1000);
-    en.moveLeft(l_speed,r_speed,md,mv,45);
-    delay(1000);
-  //Serial.println("DONE");
-  //delay(5000);
+  en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
+  en.moveForward(l_speed,r_speed,md,mv,3);
+  /*
+  en.moveRight(l_speed,r_speed,md,mv,90);
+  delay(1000);
+  en.moveLeft(l_speed,r_speed,md,mv,90);
+  delay(1000);
+  en.moveRight(l_speed,r_speed,md,mv,45);
+  delay(1000);
+  en.moveLeft(l_speed,r_speed,md,mv,45);
+  delay(1000);
+  */
+  Serial.println("DONE");
+  delay(2000);
   
   
 
@@ -173,7 +165,6 @@ void loop() {
     delay(1000);
   }
   */
-  //delay(3000);
   
 
   /* // Rpi code

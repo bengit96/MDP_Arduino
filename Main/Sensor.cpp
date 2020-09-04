@@ -95,6 +95,8 @@ float Sensor::LBDistance(int method) {
   return -1;
 }
 
+// Need to change this value
+// Method 2 & 3 probably becomes obsolete!
 float Sensor::RDistance(int method) {
   float distance;
   if (method == 1) {
