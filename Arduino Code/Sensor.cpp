@@ -98,7 +98,7 @@ float Sensor::LBDistance(int method) {
 float Sensor::RDistance(int method) {
   float distance;
   if (method == 1) {
-    return distance = right_sensor.distance() - 5.84;
+    return distance = right_sensor.distance() - 4.2;
   }
   else if (method == 2) {
     float x = right_sensor.median_Voltage_Sampling();

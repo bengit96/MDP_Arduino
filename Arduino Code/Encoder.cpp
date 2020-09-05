@@ -406,14 +406,14 @@ void Encoder:: stepPRTest(DualVNH5019MotorShield md) {
   md.setBrakes(400, 400);
 }
 
-void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum) {
+void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum, Sensor sensor) {
   float distanceTraversed = 0;
   float distanceL = 0;
   float distanceR = 0;
   long tmpl_speed = 0;
   long tmpr_speed = 0;
   //resetDistance();
-  rampUp(50,md,mv);
+  rampUp(50,md,mv); //remember to change this when change rpm
   //md.setSpeeds(setLSpeed, setRSpeed);
   delay(20);
   //delay(2000);
@@ -421,7 +421,7 @@ void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield
     resetTicks();
     // because the distance tend to overshoot, it cant be a perfect 10, 9.6 works decent for 3 grids
     // for one grid the braking mechanism cannot stop in time. need take into account decceleration. 7.8 works good for 1 grid
-    while (distanceTraversed <= 9.6) { // while havent reach distance, calibrate speed every 0.01seconds
+    while (distanceTraversed <= 8.4) { // while havent reach distance, calibrate speed every 0.01seconds
       delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
       tmpl_speed = mv.computeL(setLSpeed, bubbleSort(20,ltime));
       tmpr_speed = mv.computeR(setRSpeed, bubbleSort(20,rtime));
@@ -440,10 +440,15 @@ void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield
     }
     //Serial.print("distanceTraversed"); Serial.println(distanceTraversed);
     distanceTraversed = 0;
-    Serial.println("sensor vals"); // make the sensor calibration output a whole number
+    Serial.print("front left : ");Serial.println(sensor.FLDistance(1));
+    Serial.print("front middle : ");Serial.println(sensor.FMDistance(1));
+    Serial.print("front right : ");Serial.println(sensor.FRDistance(1));
+    Serial.print("left front : ");Serial.println(sensor.LFDistance(1));
+    Serial.print("left back: ");Serial.println(sensor.LBDistance(1));
+    Serial.print("right : ");Serial.println(sensor.RDistance(1));
     // Every 10cm output sensor values
   }
-    md.setBrakes(100, 100);
+    md.setBrakes(300, 300);
   //resetDistance();
 
 }
@@ -586,19 +591,19 @@ void Encoder::moveRightHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShiel
   md.setBrakes(300, 300);
 }
 
-void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield md, Movement mv, Sensor sensor){   
+void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield md, Movement mv, Sensor sensor, int onlyBack){   
     int checked = 0;
-    
-    //Check if front and back is aligned
-    while(checked == 0){
     float sensorA1 = sensor.LFDistance(1);//round(sensor.LFDistance(1)); // left front
     float sensorA2 = sensor.LBDistance(1); //round(sensor.LBDistance(1)); // left back
+    //Check if front and back is aligned
+    while(checked == 0){
+      sensorA1 = sensor.LFDistance(1);//round(sensor.LFDistance(1)); // left front
+      sensorA2 = sensor.LBDistance(1); //round(sensor.LBDistance(1)); // left back
       Serial.println("calibrating");
       Serial.print("begining sensor left front"); Serial.println(sensorA1);
       Serial.print("begining sensor left back");Serial.println(sensorA2);
-
       checked = 1; // if entered either of the loops, check again
-      while( abs(sensorA1 - sensorA2) >= 0.5){
+      while( abs(sensorA1 - sensorA2) >= 0.5 && onlyBack == 0){
         if(sensorA1 < sensorA2){ // if sensorA1 is closer to wall than sensorA2      
           moveRightHug(l_speed, r_speed,md,mv);
           delay(300);
@@ -628,7 +633,7 @@ void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield m
       Serial.println("before second loop");
       Serial.print("sensor A1");Serial.println(sensorA1);
       Serial.print("sensor A2");Serial.println(sensorA2);
-      if((int) sensorA1 == 5 || (int) sensorA1 == 6 || (int) sensorA1 == 4){
+      if((int) sensorA2 == 5 || (int) sensorA2 == 6 || (int) sensorA2 == 4){
         Serial.println("= 5 || 6 || 4");
       }
       else{

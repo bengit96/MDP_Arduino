@@ -129,27 +129,27 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
 
 
 float Movement::convertLSpeed(float rpm){ // negative speed. I dun think we need backwards movement?
-  float m = -2.6169; //change according to gradient
-  float c = -32.0824; // change according to y intercept
+  float m = -2.7049; //change according to gradient
+  float c = -39.4493; // change according to y intercept
   return (rpm*m + c);
 }
 
 float Movement::convertRSpeed(float rpm){ //positive speed
-  float m = 2.8035; //change according to gradient
-  float c = 28.0818; // change according to y intercept
+  float m = 2.8709; //change according to gradient
+  float c = 35.9743; // change according to y intercept
   return (rpm*m + c);
 }
 
 float Movement::convertLRPM(float lspeed){ //positive speed
-  float m = -2.6169; //change according to gradient
-  float c = -32.0824; // change according to y intercept
+  float m = -2.7049; //change according to gradient
+  float c = -39.4493; // change according to y intercept
   float lrpm = (lspeed+c)/m;
   return lrpm;
 }
 
 float Movement::convertRRPM(float rspeed){ // negative speed. I dun think we need backwards movement?
-  float m = 2.8035; //change according to gradient
-  float c = 28.0818; // change according to y intercept
+  float m = 2.8709; //change according to gradient
+  float c = 35.9743; // change according to y intercept
   float rrpm = (rspeed+c)/m;
   return rrpm;
 }

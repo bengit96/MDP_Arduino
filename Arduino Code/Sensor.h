@@ -9,7 +9,7 @@ class Sensor{
 		float RDistance(int method);
 		float LBDistance(int method);
 		float LFDistance(int method);
+    float FLDistance(int method);
 		float FMDistance(int method);
-		float FLDistance(int method);
 		float FRDistance(int method);
 };

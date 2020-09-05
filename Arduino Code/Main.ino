@@ -31,13 +31,13 @@
 #define rkD 0.000003529411765
 */
 
-float lkP = 1.946955462; //1.452691081;
-float lkI = 0;//10.36941196;//30.23000164;//-216.3143124;//0.9316770186;
-float lkD = (0.01908396947);//0.04160887656;//-0.3743448964;//0.001612322981;
+float lkP = 1.182659375; 
+float lkI = 0;
+float lkD = (0.02034174125);
 
-float rkP = (1.080771065);//(2.129651478*2)//8.646;//2.580982188; //1.290491094;
-float rkI = 0;//14.25819347;//30.79107386;//352.9411765;//0.03529411765;
-float rkD = (0.02048061169);//0.04516711834;//0.03529411765;//0.000003529411765;
+float rkP = (7.297921422);
+float rkI = 0;
+float rkD = (0.02096143097);
 
 
 // Declaration
@@ -99,8 +99,8 @@ void setup(){
   
   if(cal){    
     //en.tickCal(300,md);
-    en.stepLTest(md,1048);
-    en.stepRTest(md,1100);
+    en.stepLTest(md,1104);
+    en.stepRTest(md,1160);
     delay(1000);
     exit(1);
   }else{
@@ -118,19 +118,30 @@ void setup(){
 
 
 void loop() {
-  //Serial.println(sensor.LFDistance(1));
-  //Serial.println(sensor.LBDistance(1));
 
-  //en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
-  //en.moveForward(l_speed,r_speed,md,mv,3);
+  en.wallHugging(l_speed, r_speed, md ,mv ,sensor,0);
+  Serial.print("Left front distance");Serial.println(sensor.LFDistance(1));
+  Serial.print("Left back distance");Serial.println(sensor.LBDistance(1));
+  Serial.print("Front left distance");Serial.println(sensor.FLDistance(1));
+  Serial.print("Front middle distance");Serial.println(sensor.FMDistance(1));
+  Serial.print("Front right distance");Serial.println(sensor.FRDistance(1));
+  Serial.print("Right distance");Serial.println(sensor.RDistance(1));
+  Serial.print("Right distance");Serial.println(sensor.RDistance(2));
+  Serial.print("Right distance");Serial.println(sensor.RDistance(3));
+
+  //delay(1000);  
+  en.moveForward(l_speed,r_speed,md,mv,3,sensor);
+  delay(1000);
+    /*
     en.moveRight(l_speed,r_speed,md,mv,90);
     delay(1000);
     en.moveLeft(l_speed,r_speed,md,mv,90);
     delay(1000);
     en.moveRight(l_speed,r_speed,md,mv,45);
     delay(1000);
-    en.moveLeft(l_speed,r_speed,md,mv,45);
+    en.moveLeft(l_speed,r_speed,md,mv,46);
     delay(1000);
+    */
   //Serial.println("DONE");
   //delay(5000);
   
