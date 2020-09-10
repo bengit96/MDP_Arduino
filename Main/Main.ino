@@ -107,7 +107,7 @@ void setup(){
   Serial.print("l_speed: ");Serial.println(l_speed); // put the speeds into moveForward function
   Serial.print("r_speed: ");Serial.println(r_speed);
 
-  en.wallHugging(l_speed, r_speed, md, mv, sensor);
+  //en.wallHugging(l_speed, r_speed, md, mv, sensor);
 }
 
 
