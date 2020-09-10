@@ -588,36 +588,40 @@ void Encoder::moveRightHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShiel
 
 void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield md, Movement mv, Sensor sensor){   
     int checked = 0;
+
+    float rpm_cali = 20;
+    long lc_speed = mv.convertLSpeed(rpm_cali);
+    long rc_speed = mv.convertRSpeed(rpm_cali);
     
     //Check if front and back is aligned
     while(checked == 0){
     float sensorA1 = sensor.LFDistance(1);//round(sensor.LFDistance(1)); // left front
     float sensorA2 = sensor.LBDistance(1); //round(sensor.LBDistance(1)); // left back
       Serial.println("calibrating");
-      Serial.print("begining sensor left front"); Serial.println(sensorA1);
-      Serial.print("begining sensor left back");Serial.println(sensorA2);
+      Serial.print("beginning sensor left front: "); Serial.println(sensorA1);
+      Serial.print("beginning sensor left back: ");Serial.println(sensorA2);
 
       checked = 1; // if entered either of the loops, check again
       while( abs(sensorA1 - sensorA2) >= 0.5){
         if(sensorA1 < sensorA2){ // if sensorA1 is closer to wall than sensorA2      
-          moveRightHug(l_speed, r_speed,md,mv);
-          delay(300);
+          moveRightHug(lc_speed, rc_speed,md,mv);
+          //delay(10);
           sensorA1 = sensor.LFDistance(1); // left front
           sensorA2 = sensor.LBDistance(1);
           sensorA1 = round(sensorA1);
           sensorA2 = round(sensorA2);
-          Serial.print("sensor left front"); Serial.println(sensorA1);
-          Serial.print("sensor left back");Serial.println(sensorA2);          
+          Serial.print("sensor left front: "); Serial.println(sensorA1);
+          Serial.print("sensor left back: ");Serial.println(sensorA2);          
         }
         else{
-          moveLeftHug(l_speed, r_speed,md,mv);
-          delay(300);
+          moveLeftHug(lc_speed, rc_speed,md,mv);
+          //delay(10);
           sensorA1 = (int) sensor.LFDistance(1); // left front
           sensorA2 = (int) sensor.LBDistance(1);
           sensorA1 = round(sensorA1);
           sensorA2 = round(sensorA2);
-          Serial.print("sensor left front"); Serial.println(sensorA1);
-          Serial.print("sensor left back");Serial.println(sensorA2);          
+          Serial.print("sensor left front: "); Serial.println(sensorA1);
+          Serial.print("sensor left back: ");Serial.println(sensorA2);          
         }
         checked = 0;
       }
@@ -626,22 +630,22 @@ void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield m
     sensorA2 = round(sensor.LBDistance(1)); // left back
     
       Serial.println("before second loop");
-      Serial.print("sensor A1");Serial.println(sensorA1);
-      Serial.print("sensor A2");Serial.println(sensorA2);
+      Serial.print("sensor A1: ");Serial.println(sensorA1);
+      Serial.print("sensor A2: ");Serial.println(sensorA2);
       if((int) sensorA1 == 5 || (int) sensorA1 == 6 || (int) sensorA1 == 4){
         Serial.println("= 5 || 6 || 4");
       }
       else{
           Serial.println("entered second loop");
-          Serial.print("sensor A1");Serial.println(sensorA1);
-          Serial.print("sensor A2");Serial.println(sensorA2);
+          Serial.print("sensor A1: ");Serial.println(sensorA1);
+          Serial.print("sensor A2: ");Serial.println(sensorA2);
           if(sensorA1 < 5){ // if sensorA1 is closer to wall than sensorA2
             moveRight(l_speed, r_speed,md,mv,90);
-            delay(300);
+            delay(50);
             moveForwardHug(l_speed,r_speed,md,mv,5-sensorA1);
-            delay(300);
+            delay(50);
             moveLeft(l_speed, r_speed,md,mv,90);          
-            delay(300);
+            delay(50);
             sensorA1 = (int) sensor.LFDistance(1); // left front
             sensorA2 = (int) sensor.LBDistance(1);
             sensorA1 = round(sensorA1);
@@ -649,7 +653,7 @@ void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield m
           }
           else{
             moveLeft(l_speed, r_speed,md,mv,90);
-            delay(300);
+            delay(50);
             //en.moveForwardHug(l_speed,r_speed,md,mv,sensorA1-5);
             md.setSpeeds(l_speed,r_speed);            
             while( (sensor.FLDistance(1) + sensor.FRDistance(1) )/ 2 > 6){
@@ -658,9 +662,9 @@ void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield m
               moveForwardHug(l_speed,r_speed,md,mv,0.01);           
             }
             md.setBrakes(100,100);            
-            delay(300);
+            delay(50);
             moveRight(l_speed, r_speed,md,mv,90);
-            delay(300);
+            delay(50);
             sensorA1 = (int) sensor.LFDistance(1); // left front
             sensorA2 = (int) sensor.LBDistance(1);
             sensorA1 = round(sensorA1);
@@ -668,8 +672,8 @@ void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield m
           } 
       checked = 0;
       }
-  Serial.print("A1 ");Serial.println(sensorA1);
-  Serial.print("A2 ");Serial.println(sensorA2);
+  Serial.print("Sensor A1: ");Serial.println(sensorA1);
+  Serial.print("Sensor A2: ");Serial.println(sensorA2);
   }  //md.setM1Brake(-250);
   //exit(1);
 }

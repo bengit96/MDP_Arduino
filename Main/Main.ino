@@ -62,6 +62,8 @@ void rightmotor(){
 long l_speed = 0;
 long r_speed = 0;
 
+long lc_speed = 0;
+long rc_speed = 0;
 
 void setup(){
   Serial.begin(9600);  
@@ -101,6 +103,7 @@ void setup(){
   float rpm = 50; // change accordingly
   l_speed = mv.convertLSpeed(rpm); // change this functions based on gradient found and y intercept
   r_speed = mv.convertRSpeed(rpm); // change this functions based on gradient found and y intercept
+
   Serial.print("l_speed: ");Serial.println(l_speed); // put the speeds into moveForward function
   Serial.print("r_speed: ");Serial.println(r_speed);
   
@@ -108,11 +111,15 @@ void setup(){
 
 
 void loop() {
-  //Serial.println(sensor.LFDistance(1));
-  //Serial.println(sensor.LBDistance(1));
+  /*
+  Serial.print("Front middle: ");Serial.println(sensor.FMDistance(1));
+  Serial.print("Front left: ");Serial.println(sensor.FLDistance(1));
+  Serial.print("Front right: ");Serial.println(sensor.FRDistance(1));
+  Serial.print("Right: ");Serial.println(sensor.RDistance(1));
+  */
 
-  en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
-  en.moveForward(l_speed,r_speed,md,mv,3);
+  en.wallHugging(l_speed, r_speed, md, mv, sensor);
+  en.moveForward(l_speed, r_speed, md, mv, 3);
   /*
   en.moveRight(l_speed,r_speed,md,mv,90);
   delay(1000);
@@ -124,8 +131,8 @@ void loop() {
   delay(1000);
   */
   Serial.println("DONE");
-  delay(2000);
-  
+  //delay(1000);
+  while(1) {};
   
 
 
