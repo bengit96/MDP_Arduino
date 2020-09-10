@@ -82,7 +82,7 @@ float Sensor::LFDistance(int method) {
 float Sensor::LBDistance(int method) {
   float distance;
   if (method == 1) {
-    return distance = left_back_sensor.distance() - 6.14;
+    return distance = left_back_sensor.distance() - 5.34; //6.14
   }
   else if (method == 2) {
     float x = left_back_sensor.median_Voltage_Sampling();
@@ -100,7 +100,7 @@ float Sensor::LBDistance(int method) {
 float Sensor::RDistance(int method) {
   float distance;
   if (method == 1) {
-    return distance = right_sensor.distance() - 5.84 - 4.83;
+    return distance = right_sensor.distance() - 5.84 - 3.23;
   }
   else if (method == 2) {
     float x = right_sensor.median_Voltage_Sampling();

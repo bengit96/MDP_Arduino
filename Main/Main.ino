@@ -31,13 +31,13 @@
 #define rkD 0.000003529411765
 */
 
-float lkP = 1.946955462; //1.452691081;
+float lkP = 2.856620504; //1.452691081;
 float lkI = 0;//10.36941196;//30.23000164;//-216.3143124;//0.9316770186;
-float lkD = (0.01908396947);//0.04160887656;//-0.3743448964;//0.001612322981;
+float lkD = (0.04370629371);//0.04160887656;//-0.3743448964;//0.001612322981;
 
-float rkP = (1.080771065);//(2.129651478*2)//8.646;//2.580982188; //1.290491094;
+float rkP = (3.344272821);//(2.129651478*2)//8.646;//2.580982188; //1.290491094;
 float rkI = 0;//14.25819347;//30.79107386;//352.9411765;//0.03529411765;
-float rkD = (0.02048061169);//0.04516711834;//0.03529411765;//0.000003529411765;
+float rkD = (0.04548211037);//0.04516711834;//0.03529411765;//0.000003529411765;
 
 
 // Declaration
@@ -106,20 +106,23 @@ void setup(){
 
   Serial.print("l_speed: ");Serial.println(l_speed); // put the speeds into moveForward function
   Serial.print("r_speed: ");Serial.println(r_speed);
-  
+
+  en.wallHugging(l_speed, r_speed, md, mv, sensor);
 }
 
 
 void loop() {
-  /*
+
+  
   Serial.print("Front middle: ");Serial.println(sensor.FMDistance(1));
   Serial.print("Front left: ");Serial.println(sensor.FLDistance(1));
   Serial.print("Front right: ");Serial.println(sensor.FRDistance(1));
   Serial.print("Right: ");Serial.println(sensor.RDistance(1));
-  */
-
-  en.wallHugging(l_speed, r_speed, md, mv, sensor);
-  en.moveForward(l_speed, r_speed, md, mv, 3);
+  Serial.print("Left front: ");Serial.println(sensor.LFDistance(1));
+  Serial.print("Left back: ");Serial.println(sensor.LBDistance(1));
+  
+  //en.wallHugging(l_speed, r_speed, md, mv, sensor);
+  //en.moveForward(l_speed, r_speed, md, mv, 3);
   /*
   en.moveRight(l_speed,r_speed,md,mv,90);
   delay(1000);
@@ -131,8 +134,8 @@ void loop() {
   delay(1000);
   */
   Serial.println("DONE");
-  //delay(1000);
-  while(1) {};
+  delay(1000);
+  //while(1) {};
   
 
 
