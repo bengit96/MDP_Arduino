@@ -422,7 +422,7 @@ void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield
     // because the distance tend to overshoot, it cant be a perfect 10, 9.6 works decent for 3 grids
     // for one grid the braking mechanism cannot stop in time. need take into account decceleration. 7.8 works good for 1 grid
     while (distanceTraversed <= 9.6) { // while havent reach distance, calibrate speed every 0.01seconds
-      delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
+      delay(0.05); // should delay so the speed don't keep changing. need to tweak to get best interval
       tmpl_speed = mv.computeL(setLSpeed, bubbleSort(20,ltime));
       tmpr_speed = mv.computeR(setRSpeed, bubbleSort(20,rtime));
       //Serial.print("tmpl_speed "); Serial.println(tmpl_speed);
@@ -546,8 +546,8 @@ void Encoder::rampUp(long rpm, DualVNH5019MotorShield md, Movement mv){
     */
     tmplspeed = mv.convertRSpeed(tmp_rpm);
     tmprspeed = mv.convertLSpeed(tmp_rpm);
-    tmp_rpm++;
     md.setSpeeds(tmplspeed,tmprspeed);
+    tmp_rpm++;
   }
 }
 

@@ -113,16 +113,16 @@ void setup(){
 
 void loop() {
 
-  
+  /*
   Serial.print("Front middle: ");Serial.println(sensor.FMDistance(1));
   Serial.print("Front left: ");Serial.println(sensor.FLDistance(1));
   Serial.print("Front right: ");Serial.println(sensor.FRDistance(1));
   Serial.print("Right: ");Serial.println(sensor.RDistance(1));
   Serial.print("Left front: ");Serial.println(sensor.LFDistance(1));
-  Serial.print("Left back: ");Serial.println(sensor.LBDistance(1));
+  Serial.print("Left back: ");Serial.println(sensor.LBDistance(1)); */
   
-  //en.wallHugging(l_speed, r_speed, md, mv, sensor);
-  //en.moveForward(l_speed, r_speed, md, mv, 3);
+  en.wallHugging(l_speed, r_speed, md, mv, sensor);
+  en.moveForward(l_speed, r_speed, md, mv, 3);
   /*
   en.moveRight(l_speed,r_speed,md,mv,90);
   delay(1000);
@@ -134,7 +134,7 @@ void loop() {
   delay(1000);
   */
   Serial.println("DONE");
-  delay(1000);
+  delay(5000);
   //while(1) {};
   
 
