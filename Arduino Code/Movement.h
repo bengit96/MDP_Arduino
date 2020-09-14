@@ -5,8 +5,8 @@ long static errorR[2] = {-1};
 class Movement {
 
 	private:
-		float lKp, lKi, lKd;
-	    float rKp, rKi, rKd;
+		float lk1, lk2, lk3,lkp,lkd,lki;
+	    float rk1, rk2, rk3,rkp,rkd,rki;
 		float l_speed, r_speed;
 	public: 
 	    float distanceL = 0;
@@ -18,6 +18,8 @@ class Movement {
 	    float previousRSpeed = 0;
 	    float previousRError = 0;
 	    float previousRError2 = 0;
+      float LErrors = 0;
+      float RErrors = 0;
 		//Left
 		int pinA1;
 		int pinA2;

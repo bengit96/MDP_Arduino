@@ -12,4 +12,6 @@ class Sensor{
     float FLDistance(int method);
 		float FMDistance(int method);
 		float FRDistance(int method);
+    int convertLong(float distance);
+    int convertShort(float distance);
 };

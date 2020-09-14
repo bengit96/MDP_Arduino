@@ -31,13 +31,13 @@
 #define rkD 0.000003529411765
 */
 
-float lkP = 1.182659375; 
-float lkI = 0;
-float lkD = (0.02034174125);
+float lkP = 1.248; //fri(5.17984);//0.162808185;// 
+float lkI = 0;//1.261647912;
+float lkD = 0.0873 * lkP;//fri(0.0749*5.17984);//0.005144738647;
 
-float rkP = (7.297921422);
-float rkI = 0;
-float rkD = (0.02096143097);
+float rkP = 1.99696;//fri(4.14592); //5.4249438649;//
+float rkI = 0;//5.788603819;
+float rkD = 0.0456 * rkP;//fri(1.072*4.14592); //0.0100711696;
 
 
 // Declaration
@@ -74,7 +74,7 @@ long r_speed = 0;
 
 
 void setup(){
-  Serial.begin(9600);  
+  Serial.begin(115200);  
 
   /*
   int RPM = 50;
@@ -95,12 +95,10 @@ void setup(){
   en.init();
   enableInterrupt(en.pinA1, leftmotor, RISING);
   enableInterrupt(en.pinA2, rightmotor, RISING);
-  int cal = 0;// set 1 if calibrating
+  int cal = 0; // set 1 if calibrating
   
   if(cal){    
-    //en.tickCal(300,md);
-    en.stepLTest(md,1104);
-    en.stepRTest(md,1160);
+    en.tickCal(300,md);
     delay(1000);
     exit(1);
   }else{
@@ -108,9 +106,7 @@ void setup(){
   }
   
   
-  float rpm = 50; // change accordingly
-  l_speed = mv.convertLSpeed(rpm); // change this functions based on gradient found and y intercept
-  r_speed = mv.convertRSpeed(rpm); // change this functions based on gradient found and y intercept
+
   Serial.print("l_speed");Serial.println(l_speed); // put the speeds into moveForward function
   Serial.print("r_speed");Serial.println(r_speed);
   
@@ -118,74 +114,75 @@ void setup(){
 
 
 void loop() {
-
-  en.wallHugging(l_speed, r_speed, md ,mv ,sensor,0);
+  float rpm = 50; // change accordingly
+  l_speed = mv.convertLSpeed(rpm); // change this functions based on gradient found and y intercept
+  r_speed = mv.convertRSpeed(rpm); // change this functions based on gradient found and y intercept
+  Serial.println(l_speed);
+  Serial.println(r_speed);
+  //delay(2000);  
+  //md.setSpeeds(-125,92);
+  //delay(5000);
+  
+  //en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
   Serial.print("Left front distance");Serial.println(sensor.LFDistance(1));
   Serial.print("Left back distance");Serial.println(sensor.LBDistance(1));
   Serial.print("Front left distance");Serial.println(sensor.FLDistance(1));
   Serial.print("Front middle distance");Serial.println(sensor.FMDistance(1));
   Serial.print("Front right distance");Serial.println(sensor.FRDistance(1));
   Serial.print("Right distance");Serial.println(sensor.RDistance(1));
-  Serial.print("Right distance");Serial.println(sensor.RDistance(2));
-  Serial.print("Right distance");Serial.println(sensor.RDistance(3));
+  //delay(2000);
+  //Serial.print("Right distance");Serial.println(sensor.RDistance(2));
+  //Serial.print("Right distance");Serial.println(sensor.RDistance(3));
+  //en.moveRight(l_speed,r_speed,md,mv,810); //720
+  //en.moveRight(l_speed,r_speed,md,mv,405); //360
+  //en.moveRight(l_speed,r_speed,md,mv,202); //180
+  //en.moveRight(l_speed,r_speed,md,mv,90); //90
+  //en.moveLeft(l_speed,r_speed,md,mv,810); //720
+  //en.moveLeft(l_speed,r_speed,md,mv,405); //360
+  //en.moveLeft(l_speed,r_speed,md,mv,200); //180
 
-  //delay(1000);  
+
+
+ rpm = 50; // change accordingly
+  l_speed = mv.convertLSpeed(rpm); 
+  r_speed = mv.convertRSpeed(rpm); 
+  //en.moveForward(l_speed,r_speed,md,mv,13,sensor);
+
+  en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
+  //en.moveForward(l_speed,r_speed,md,mv,8,sensor);
+  en.moveLoop(l_speed,r_speed,md,mv,sensor);
+  //en.checkList1(l_speed,r_speed,md,mv,6,sensor); // move straight and object collison
+  //en.checkList2(l_speed,r_speed,md,mv,6,sensor); //extension beyond basics
+ 
+  delay(2000);   
+  /*
+  delay(1000);
+  en.moveLeft(l_speed,r_speed,md,mv,90); //90
+  en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
+  en.moveForward(l_speed,r_speed,md,mv,5,sensor);
+  delay(1000);
+  en.moveLeft(l_speed,r_speed,md,mv,90); //90
   en.moveForward(l_speed,r_speed,md,mv,3,sensor);
-  delay(1000);
-    /*
-    en.moveRight(l_speed,r_speed,md,mv,90);
-    delay(1000);
-    en.moveLeft(l_speed,r_speed,md,mv,90);
-    delay(1000);
-    en.moveRight(l_speed,r_speed,md,mv,45);
-    delay(1000);
-    en.moveLeft(l_speed,r_speed,md,mv,46);
-    delay(1000);
-    */
-  //Serial.println("DONE");
-  //delay(5000);
-  
-  
-
+  en.wallHugging(l_speed, r_speed, md ,mv ,sensor);
+  en.moveForward(l_speed,r_speed,md,mv,5,sensor);
+  delay(5000);
+  */
 
   /*
-  en.moveRight(l_speed,r_speed,md,mv,100);  
-  delay(1000);
-  en.moveLeft(l_speed,r_speed,md,mv,100); 
-  delay(1000);
+  en.moveForward(l_speed,r_speed,md,mv,3,sensor);
+  //en.moveRight(l_speed,r_speed,md,mv,95);
+  en.moveLeft(l_speed,r_speed,md,mv,100);
+  en.moveForward(l_speed,r_speed,md,mv,3,sensor);
+  //en.moveRight(l_speed,r_speed,md,mv,95);
+  en.moveLeft(l_speed,r_speed,md,mv,100);
+  en.moveForward(l_speed,r_speed,md,mv,3,sensor);
+  //en.moveRight(l_speed,r_speed,md,mv,95);
+  en.moveLeft(l_speed,r_speed,md,mv,100);  
+  en.moveForward(l_speed,r_speed,md,mv,3,sensor);
+  //en.moveRight(l_speed,r_speed,md,mv,95);
+  en.moveLeft(l_speed,r_speed,md,mv,100);  
+  delay(3000);
   */
-  /*
-  en.moveForward(l_speed,r_speed,md,mv,3);
-  delay(1000);
-  en.moveRight(l_speed,r_speed,md,mv,90);  
-  delay(1000);
-  en.moveForward(l_speed,r_speed,md,mv,1);
-  delay(1000);
-  en.moveRight(l_speed,r_speed,md,mv,90);  
-  delay(1000);
-  en.moveForward(l_speed,r_speed,md,mv,1);
-  delay(1000);
-  en.moveLeft(l_speed,r_speed,md,mv,90); 
-  delay(1000);
-  en.moveLeft(l_speed,r_speed,md,mv,90); 
-  delay(1000);
-  */
-  /*
-  for(int i = 0 ; i < 4;i++){
-    en.moveLeft(l_speed,r_speed,md,mv,90);  
-    delay(1000);
-    en.moveRight(l_speed,r_speed,md,mv,90);  
-    delay(1000);
-  }
-  for(int i = 0 ; i < 4;i++){
-    en.moveRight(l_speed,r_speed,md,mv,90);  
-    delay(1000);
-    en.moveLeft(l_speed,r_speed,md,mv,90);  
-    delay(1000);
-  }
-  */
-  //delay(3000);
-  
 
   /* // Rpi code
     Serial.println("sending to rpi");
@@ -201,7 +198,4 @@ void loop() {
   }
   delay(1000);
   */
-
-  //en.moveForward(l_speed, r_speed,md,mv,1);// r and l speed need to change to fixed values
-
 }

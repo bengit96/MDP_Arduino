@@ -82,7 +82,7 @@ float Sensor::LFDistance(int method) {
 float Sensor::LBDistance(int method) {
   float distance;
   if (method == 1) {
-    return distance = left_back_sensor.distance() - 6.14;
+    return distance = left_back_sensor.distance() - 5.64;
   }
   else if (method == 2) {
     float x = left_back_sensor.median_Voltage_Sampling();
@@ -109,4 +109,36 @@ float Sensor::RDistance(int method) {
     return distance = (87.40818/x)-17.38074;
   }
   return -1;
+}
+
+//convert to grid
+int Sensor::convertLong(float distance) {
+  if(distance <=10){
+    return 0;
+  } else if ( 10 < distance && distance <= 17){ //13
+    return 1;
+  } else if ( 17 < distance && distance <= 28){ // 22
+    return 2;
+  } else if ( 28 < distance && distance <= 39){ // 32
+    return 3;
+  } else if ( 39 < distance && distance <= 53){ //45
+    return 4;
+  } else if ( 53 < distance && distance <= 65){ // 60
+    return 5;
+  } else if ( distance > 65){
+    return 6;
+  } 
+}
+
+//convert to grid
+int Sensor::convertShort(float distance) {
+  if( distance <= 12){
+    return 0;
+  } else if ( 12 < distance && distance <= 24){
+    return 1;
+  } else if ( 24 < distance && distance <= 40){
+    return 2;
+  } else if ( distance > 40){
+    return 3;
+  }
 }

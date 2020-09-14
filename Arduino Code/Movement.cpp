@@ -2,19 +2,34 @@
 #include "Movement.h"
 #include <math.h>
 
+float lm = -2.7395;
+float lc = -54.2770;
+
+float rm =  3.0843;
+float rc = 42.1976;
+
+
 Movement::Movement(int pA1,int pB1, int pA2,  int pB2, float lP,float lI, float lD, float rP,float rI, float rD){
+
+	
 	//Left
 	pinA1 = pA1;
 	pinB1 = pB1;
 	//Right
 	pinA2 = pA2;
 	pinB2 = pB2;
-	lKp = lP;
-	lKi = lI;
-	lKd = lD;
-  rKp = rP;
-  rKi = rI;
-  rKd = rD;
+  lkp = lP;
+  lki = lI;
+  lkd = lD;
+  rkp = rP;
+  rki = rI;
+  rkd = rD;
+	lk1 = lP + lI + lD;
+	lk2 = -lP - 2*lD;
+	lk3 = lD;
+  rk1 = rP + rI + rD;
+  rk2 = -rP - 2*rD;
+  rk3 = rD;
 	previousLSpeed = 0;
 	previousLError = 0;
 	previousLError2 = 0;
@@ -24,6 +39,8 @@ Movement::Movement(int pA1,int pB1, int pA2,  int pB2, float lP,float lI, float 
   distanceL = 0;
   distanceR = 0;
   distanceTraversed = 0;
+  LErrors = 0;
+  RErrors = 0;
 }
 
 
@@ -31,10 +48,8 @@ float Movement::computeL(long setLSpeed, unsigned long ltime){
   float currentRPM = (pow(10,6) * 60 /ltime )/ 562.25;
   float setLRPM = convertLRPM(setLSpeed); 
   long currentError = setLRPM - currentRPM;
-  float k1 = lKp + lKi + lKd;
-  float k2 = -lKp - 2*lKd;
-  float k3 = lKd;
-  //no queue like feature
+  LErrors += currentError;
+  /*
   if(errorL[0] == -1){ 
     errorL[0] = currentError;
   }else if (errorL[1] == -1){
@@ -44,22 +59,23 @@ float Movement::computeL(long setLSpeed, unsigned long ltime){
     errorL[0] = errorL[1];
     errorL[1] = currentError;
   }
-  //float u = currentRPM + k1 * currentError + k2 * previousLError + k3 * previousLError2;
+  */
+  //float u = currentRPM + lk1 * currentError + lk2 * previousLError + lk3 * previousLError2;
   
-  float u = currentRPM + k1 * currentError + k2 * previousLError + k3 * previousLError2;
+  float u = currentRPM + lkp * currentError + lkd * previousLError;// + k3 * previousLError2;
+   //float u = currentRPM + lkp * currentError + (lkd * (currentError-previousLError)) + lki * LErrors; //random online method
+  //Serial.print("lerrors");Serial.println(LErrors);
+ /*
   if( u <= setLRPM ){
     u = setLRPM;
   }
-  if(u >= 120){
-    u = 120;
+  */
+  
+  if( u <= 0 ){
+    u = 0;
   }
-  float returnSpeed = convertLSpeed(u);
-  /*
-  Serial.print("currentRPM");Serial.println(currentRPM);
-  Serial.print("k1 * current error");Serial.println(k1 * currentError);
-  Serial.print("k2 * previous error");Serial.println(k2 * previousLError);
-  Serial.print("k2 * previous error");Serial.println(k2 * previousLError2);
-  Serial.print("return speed l ");Serial.println(returnSpeed);
+  
+ 
   /*
   Serial.print("lk1");Serial.println(k1);
   Serial.print("lk2");Serial.println(k2);
@@ -69,8 +85,18 @@ float Movement::computeL(long setLSpeed, unsigned long ltime){
   Serial.print("previouslerror2");Serial.println(previousLError2);
   Serial.print("l current error");Serial.println(currentError);
   Serial.print("l current rpm");Serial.println(currentRPM);
-  Serial.print("l output rpm");Serial.println(u);
   */
+  //Serial.print("l output rpm");Serial.println(u);
+
+  if(u >= 120){
+    u = 120;
+  }
+  float returnSpeed = convertLSpeed(u);
+  //Serial.print("currentRPM");Serial.println(currentRPM);
+  //Serial.print("k1 * current error");Serial.println(lk1 * currentError);
+  //Serial.print("k2 * previous error");Serial.println(lk2 * previousLError);
+  //Serial.print("k3 * previous error");Serial.println(lk3 * previousLError2);
+  //Serial.print("return speed l ");Serial.println(returnSpeed);
   previousLError = currentError;
   return returnSpeed;
 }
@@ -79,12 +105,9 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
   float currentRPM = (pow(10,6) * 60 /rtime )/ 562.25;
   //float currentSpeed = convertRSpeed(rpm);//how to use ticks. they said to not use pulsein for feedbacks for pid
   float setRRPM = convertRRPM(setRSpeed);
-  float k1 = rKp + rKi + rKd;
-  float k2 = -rKp - 2*rKd;
-  float k3 = rKd;
   float currentError = (setRRPM-currentRPM);
-
-  //no queue like feature
+  RErrors+= currentError;
+  /*
   if(errorR[0] == -1){ 
     errorR[0] = currentError;
   }else if (errorR[1] == -1){
@@ -94,33 +117,35 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
     errorR[0] = errorR[1];
     errorR[1] = currentError;
   }
-
-  float u = currentRPM + k1 * currentError + k2 * previousRError + k3 * previousRError2;
-  //float u = currentRPM + k1 * currentError + k2 * previousRError;// + k3 * previousRError2;
+  */
+  //float u = currentRPM + rk1 * currentError + rk2 * previousRError + rk3 * previousRError2;
+  float u = currentRPM + rkp * currentError + rkd * previousRError;// + k3 * previousRError2;
+  //float u = currentRPM + rkp * currentError + (rkd * (currentError-previousRError)) + rki * RErrors; //random online method
+  //Serial.print("rerrors");Serial.println(RErrors);
   if( u >= 120 ){
     u = 120;
   }
+  
+  if( u <= 0 ){
+    u = 0;
+  } 
+   
+  /*
   if(u <= setRRPM){
     u = setRRPM;
   }
+  */
   float returnSpeed = convertRSpeed(u);
+  //Serial.print("currentRPM");Serial.println(currentRPM);
+    //Serial.print("return speed r ");Serial.println(returnSpeed);
+  //Serial.print("r output rpm");Serial.println(u);
+
   /*
-  Serial.print("currentRPM");Serial.println(currentRPM);
   Serial.print("set rpm");Serial.println(setRRPM);
-  Serial.print("k1 * current error");Serial.println(k1 * currentError);
-  Serial.print("k2 * previous error");Serial.println(k2 * previousRError);
-  Serial.print("k3 * previous error");Serial.println(k3 * previousRError2);
+  Serial.print("k1 * current error");Serial.println(rk1 * currentError);
+  Serial.print("k2 * previous error");Serial.println(rk2 * previousRError);
+  Serial.print("k3 * previous error");Serial.println(rk3 * previousRError2);
   Serial.print("return speed r ");Serial.println(returnSpeed);
-  
-  /*
-  Serial.print("currentRPM");Serial.println(currentRPM);
-  Serial.print("k1 * current error");Serial.println(k1 * currentError);
-  Serial.print("k2 * previous error");Serial.println(k2 * previousRError);
-  Serial.print("previousrerror");Serial.println(previousRError);
-  Serial.print("previousrerror2");Serial.println(previousRError2);  
-  Serial.print("r current error");Serial.println(currentError);
-  Serial.print("r current rpm");Serial.println(currentRPM);
-  Serial.print("r output rpm");Serial.println(u);
   */
   previousRError = currentError;
   return returnSpeed;
@@ -128,29 +153,21 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
 
 
 
-float Movement::convertLSpeed(float rpm){ // negative speed. I dun think we need backwards movement?
-  float m = -2.7049; //change according to gradient
-  float c = -39.4493; // change according to y intercept
-  return (rpm*m + c);
+float Movement::convertLSpeed(float rpm){ // negative speed
+  return (rpm*lm + lc);
 }
 
 float Movement::convertRSpeed(float rpm){ //positive speed
-  float m = 2.8709; //change according to gradient
-  float c = 35.9743; // change according to y intercept
-  return (rpm*m + c);
+  return (rpm*rm + rc);
 }
 
-float Movement::convertLRPM(float lspeed){ //positive speed
-  float m = -2.7049; //change according to gradient
-  float c = -39.4493; // change according to y intercept
-  float lrpm = (lspeed+c)/m;
+float Movement::convertLRPM(float lspeed){ //negative speed
+  float lrpm = (lspeed-lc)/lm;
   return lrpm;
 }
 
-float Movement::convertRRPM(float rspeed){ // negative speed. I dun think we need backwards movement?
-  float m = 2.8709; //change according to gradient
-  float c = 35.9743; // change according to y intercept
-  float rrpm = (rspeed+c)/m;
+float Movement::convertRRPM(float rspeed){ // postivie speed
+  float rrpm = (rspeed-rc)/rm;
   return rrpm;
 }
 
