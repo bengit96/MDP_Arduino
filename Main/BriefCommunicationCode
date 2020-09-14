@@ -1,0 +1,55 @@
+//Brief Code for RPI Communication
+
+loop(){
+	int total_grid = 0;
+	while(Serial.available() < 0); // loop while no instructions
+	String data = Serial.readStringUntil('\n');
+						// if is 2 digit number
+	int gridNum = data.charAt(1); //not sure starts at 0 or 1
+	if (data.charAt(2) <= 9 && data.charAt(2) >= 1 ){
+		int ggridNum = (int) data.charAt(i+1) * 10;
+		// assume max is 2 digit
+		ggridNum += (int) data.charAt(i+2);
+		i++;	
+	} else{ 
+		int ggridNum = data.charAt(i+1);
+	}	
+	total_grid += gridNum;	
+	char actions = data.charAt(0); //not sure starts at 0 or 1
+	switch (data) { // think can only do char or integer
+		case "m": //not sure if case sensitive affects
+			en.moveForward(l_speed,r_speed,md,mv,gridNum);
+			break;
+		case "l":
+			en.moveLeft(l_speed,r_speed,md,mv,90);
+			break;
+		case "r":
+			en.moveRight(l_speed,r_speed,md,mv,90);
+			break;
+		case "g":
+			for(int i = 1; i < strlen(data);i++){
+				char gactions = data.charAt(i);
+				switch(data){
+					case "m":
+						// if is 2 digit number
+						if (data.charAt(i+2) <= 9 && data.charAt(i+2) >= 1 ){
+							int ggridNum = (int) data.charAt(i+1) * 10;
+							// assume max is 2 digit
+							ggridNum += (int) data.charAt(i+2);
+							i++;	
+						} else{ 
+							int ggridNum = data.charAt(i+1);
+						}
+						en.moveForward(l_speed,r_speed,md,mv,ggridNum);
+					case "l":
+						en.moveLeft(l_speed,r_speed,md,mv,90);
+					case "r":
+						en.moveRight(l_speed,r_speed,md,mv,90);				
+				}
+			}
+		default: 
+			Serial.print("fail"); Serial.println(data);
+			break;
+	}
+	// Every 10 grids will output back a sensor value
+}
