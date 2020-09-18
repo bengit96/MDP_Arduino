@@ -19,7 +19,7 @@ float Sensor::FMDistance(int method) {
   float x = front_middle_sensor.median_Voltage_Sampling();
   switch(method){
     case 1:
-      return distance = front_middle_sensor.distance() - 2.26;
+      return distance = front_middle_sensor.distance() - 3.26;
     case 2:
       return distance = (342249.6-32728.63*x)/(1+12763.97*x+328.3559*(pow(x,2)));  
     case 3:
@@ -33,11 +33,12 @@ float Sensor::FLDistance(int method) {
   float x = front_left_sensor.median_Voltage_Sampling();
   switch(method){
     case 1:
-      return distance = front_left_sensor.distance() - 2.21;
+      return distance = front_left_sensor.distance() - 3.12;
     case 2:
       return distance = (163.3724-5.125353*x)/(1+2.455257*x+2.906178*(pow(x,2)));
     case 3:
-      return distance = (30.23257/x)-5.944718;    
+      //return distance = (30.23257/x)-5.944718;   
+      return distance = (31.05792/x)-6.114549; 
   }
   return -1;
 }
@@ -47,7 +48,7 @@ float Sensor::FRDistance(int method) {
   float x = front_right_sensor.median_Voltage_Sampling();
   switch(method){
     case 1:
-      return distance = front_right_sensor.distance() - 2.12;
+      return distance = front_right_sensor.distance() - 3.12;
     case 2:
       return distance = (228550.6-46173.84*x)/(1+7737.163*x-259.7944*(pow(x,2)));
     case 3:
@@ -89,11 +90,13 @@ float Sensor::RDistance(int method) {
   float x = right_sensor.median_Voltage_Sampling();
   switch(method){
     case 1:
-      return distance = right_sensor.distance() - 4.2;
+      return distance = right_sensor.distance();
     case 2:
-      return distance = (278976.2-69729.29*x)/(1+3824.989*x-614.9018*(pow(x,2)));
+      return distance = (2.879996+0.618943*x)/(1+0.2174681*0.008219543*(pow(x,2)));
+      //(2.879996+0.618943*x)/(1+0.2174681*x+0.008219543*(x^2))
     case 3:
-      return distance = (87.40818/x)-17.38074;
+      return distance = (84.14019/x)-28.26101;
+      //-84.14019/(-28.26101-x)
   }
   return -1;
 }
@@ -134,8 +137,8 @@ void Sensor::caliSensor() {
 	Serial.println("calibration");
 	Serial.print("Left Back Sensor: "); Serial.println(LBDistance(3));
 	Serial.print("Left Front Sensor: "); Serial.println(LFDistance(3));
-	Serial.print("Front Left Sensor: "); Serial.println(FLDistance(1));
+	Serial.print("Front Left Sensor: "); Serial.println(FLDistance(3));
 	Serial.print("Front Middle Sensor: "); Serial.println(FMDistance(1));
-	Serial.print("Front Right Sensor: "); Serial.println(FRDistance(1));
-	Serial.print("Right Sensor: "); Serial.println(RDistance(1));
+	Serial.print("Front Right Sensor: "); Serial.println(FRDistance(3));
+  Serial.print("Right Sensor: "); Serial.println(RDistance(3));
 }

@@ -140,9 +140,9 @@ void loop() {
 
 
 
-  rpm = 50; // change accordingly
-  l_speed = mv.convertLSpeed(rpm); 
-  r_speed = mv.convertRSpeed(rpm); 
+  //rpm = 50; // change accordingly
+  //l_speed = mv.convertLSpeed(rpm); 
+  //r_speed = mv.convertRSpeed(rpm); 
   //en.moveForward(l_speed,r_speed,md,mv,13,sensor);
 
   //en.wallHugging(l_speed, r_speed, md ,mv ,sensor);

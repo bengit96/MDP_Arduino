@@ -71,7 +71,10 @@ float SharpIR::distance() {
         // puntualDistance=61.573*pow(voltFromRaw/1000, -1.1068);
         
         // Different expressions required as the Photon has 12 bit ADCs vs 10 bit for Arduinos
-          distanceCM = 60.374 * pow(map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0, -1.16);
+          //distanceCM = 60.374 * pow(map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0, -1.16);
+          distanceCM = ir_val[NB_SAMPLE / 2];
+          //distanceCM = (float)9462/(ir_val[NB_SAMPLE / 2] - 16.92);
+          //distanceCM = 61.573 * pow(map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0, -1.1068);
 
 
     }
