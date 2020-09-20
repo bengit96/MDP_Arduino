@@ -26,6 +26,23 @@ SharpIR::SharpIR(int irPin, long sensorModel) {
     #endif
 }
 
+//insertionSort
+void SharpIR::insertionSort(int a[], int size){
+    int temp;
+    for (int i=0; i<size; i++){
+      for (int j=i; j>0; j--){
+        if (a[j] < a[j-1]){
+          temp = a[j];
+          a[j] = a[j-1];
+          a[j-1] = temp;
+        }
+        else
+          break;
+      }
+    }
+}
+
+/*
 // Sort an array
 void SharpIR::sort(int a[], int size) {
     for(int i=0; i<(size-1); i++) {
@@ -41,6 +58,7 @@ void SharpIR::sort(int a[], int size) {
         if (flag) break;
     }
 }
+*/
 
 // Read distance and compute it
 float SharpIR::distance() {
@@ -56,7 +74,7 @@ float SharpIR::distance() {
     }
     
     // Sort it 
-    sort(ir_val,NB_SAMPLE);
+    insertionSort(ir_val,NB_SAMPLE);
 
     
     if (_model==1080) {
@@ -92,7 +110,7 @@ float SharpIR::median_Voltage_Sampling() {
 		ir_val[i] = analogRead(_irPin);
 	}
 
-	sort(ir_val,NB_SAMPLE);
+	insertionSort(ir_val,NB_SAMPLE);
 
 	return voltage = map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0;
   

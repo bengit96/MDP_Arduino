@@ -29,6 +29,7 @@ class SharpIR
 
   private:
 
+    void insertionSort(int a[], int size);
     void sort(int a[], int size);
     
     int _irPin;

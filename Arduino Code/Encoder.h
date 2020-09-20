@@ -34,6 +34,7 @@ class Encoder {
     void rampUp(long rpm, DualVNH5019MotorShield md, Movement m);
     void rampDown(long rpm, DualVNH5019MotorShield md, Movement m);
     void moveForwardHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int distance);
+    long unsigned int insertionSort(int numIteration, unsigned long * timeWidth);
     long unsigned int bubbleSort(int numIteration, unsigned long * timeWidth);
     void moveLeftHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv);
     void moveRightHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv);

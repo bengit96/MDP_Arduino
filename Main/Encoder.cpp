@@ -16,6 +16,24 @@ Encoder:: Encoder(int pA1, int pB1, int pA2,  int pB2) {
   pinB2 = pB2;
 }
 
+long unsigned int Encoder::insertionSort(int numIteration, unsigned long * timeWidth) {
+  int out, in, swapper;
+  for (out = 1 ; out < numIteration; out++) { // outer loop
+    for (in = out; in > 0; in--)  { // inner loop
+      if ( timeWidth[in] < timeWidth[in - 1] ) { //Each iteration compare till larger than previous element
+        // swap them:
+        swapper = timeWidth[in];
+        timeWidth [in] = timeWidth[in - 1];
+        timeWidth[in - 1] = swapper;
+      }
+      else 
+        break;
+    }
+  }
+  return timeWidth[numIteration / 2];
+}
+
+/*
 long unsigned int Encoder::bubbleSort(int numIteration, unsigned long * timeWidth) {
   int out, in, swapper;
   for (out = 0 ; out < numIteration; out++) { // outer loop
@@ -30,6 +48,7 @@ long unsigned int Encoder::bubbleSort(int numIteration, unsigned long * timeWidt
   }
   return timeWidth[numIteration / 2];
 }
+*/
 
 void Encoder::init() {
   init_ltime = micros();
@@ -102,7 +121,7 @@ void Encoder::tickCal(int numIteration, DualVNH5019MotorShield md) {
       //Serial.println(ltime[19]);
       tmp_count++;
     }
-    rpmTable[0][i / -50 + 7] = bubbleSort(numIteration, timeWidth);
+    rpmTable[0][i / -50 + 7] = insertionSort(numIteration, timeWidth);
     Serial.println(timeWidth[numIteration / 2]);
   }
 
@@ -121,7 +140,7 @@ void Encoder::tickCal(int numIteration, DualVNH5019MotorShield md) {
       //Serial.println(rtime[19]);
       tmp_count++;
     }
-    rpmTable[1][i / 50 - 1] = bubbleSort(numIteration, timeWidth);
+    rpmTable[1][i / 50 - 1] = insertionSort(numIteration, timeWidth);
     Serial.println(timeWidth[numIteration / 2]);
 
   }
@@ -180,21 +199,6 @@ void Encoder:: stepRTest(DualVNH5019MotorShield md, int timeWidth) {
   md.setBrakes(400, 400);
 }
 
-void Encoder::rampUp(int setLSpeed, int setRSpeed, DualVNH5019MotorShield md, Movement mv) {
-  int tmplspeed = 0;
-  int tmprspeed = 0;
-  while (tmprspeed < setRSpeed) {
-    /*
-      if(tmplspeed<lspeed){
-      tmplspeed = lspeed;
-      }
-      if(tmprspeed>rspeed){
-      tmprspeed = rspeed;
-      }
-    */
-    md.setSpeeds(--tmplspeed, ++tmprspeed);
-  }
-}
 
 void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum, Sensor sensor) {
   float distanceTraversed = 0;
@@ -204,7 +208,7 @@ void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield
   long tmpr_speed = 0;
   float setDistance = 9.6;
   //resetDistance();
-  Encoder::rampUp(setLSpeed, setRSpeed, md, mv); //remember to change this when change rpm
+  //rampUp(50, md, mv); //remember to change this when change rpm
   //md.setSpeeds(setLSpeed, setRSpeed);
   
   //delay(2000);
@@ -220,8 +224,8 @@ void Encoder::moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield
     while (distanceTraversed <= setDistance) { // while havent reach distance, calibrate speed every 0.01seconds
       delay(50); // should delay so the speed don't keep changing. need to tweak to get best interval
       //delay(100); // for kp ki kd
-      tmpl_speed = mv.computeL(setLSpeed, bubbleSort(10, ltime));
-      tmpr_speed = mv.computeR(setRSpeed, bubbleSort(10, rtime));
+      tmpl_speed = mv.computeL(setLSpeed, insertionSort(10, ltime));
+      tmpr_speed = mv.computeR(setRSpeed, insertionSort(10, rtime));
       //Serial.println(tmpl_speed);
       //Serial.println(tmpr_speed);
       md.setSpeeds(tmpl_speed, tmpr_speed);
@@ -292,8 +296,8 @@ void Encoder::moveForwardHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShi
   // for one grid the braking mechanism cannot stop in time. need take into account decceleration. 7.8 works good for 1 grid
   while (distanceTraversed <= distance) { // while havent reach distance, calibrate speed every 0.01seconds
     delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
-    tmpl_speed = mv.computeL(setLSpeed, bubbleSort(10, ltime));
-    tmpr_speed = mv.computeR(setRSpeed, bubbleSort(10, rtime));
+    tmpl_speed = mv.computeL(setLSpeed, insertionSort(10, ltime));
+    tmpr_speed = mv.computeR(setRSpeed, insertionSort(10, rtime));
     md.setSpeeds(tmpl_speed, tmpr_speed);
     distanceL = 2 * 3 * M_PI * (getLticks() / 562.25);
     distanceR = 2 * 3 * M_PI * (getRticks() / 562.25);
@@ -329,8 +333,8 @@ void Encoder::moveLeft(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md
   //while ( distanceTraversed <= (15.27887395921 * M_PI /4 - 0.000000476837186624835)/90 * degree ) { // while havent reach distance, calibrate speed every 0.01seconds
   while ( distanceTraversed <= (15 * M_PI / 4) / 90 * degree ) {
     delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
-    tmpl_speed = mv.computeL(lc_speed, bubbleSort(10, ltime));
-    tmpr_speed = mv.computeR(rc_speed, bubbleSort(10, rtime));
+    tmpl_speed = mv.computeL(lc_speed, insertionSort(10, ltime));
+    tmpr_speed = mv.computeR(rc_speed, insertionSort(10, rtime));
     md.setSpeeds(-tmpl_speed, tmpr_speed);
     distanceL = 6 * M_PI * (getLticks() / 562.25);
     distanceR = 6 * M_PI * (getRticks() / 562.25);
@@ -356,8 +360,8 @@ void Encoder::moveRight(long setLSpeed, long setRSpeed, DualVNH5019MotorShield m
   //   while ( distanceTraversed <= (15.27887395921 * M_PI /4 - 0.000000476837186624835)/90 * degree) { // while havent reach distance, calibrate speed every 0.01seconds
   while ( distanceTraversed <= (15 * M_PI / 4 ) / 90 * degree ) {
     delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
-    long tmpl_speed = mv.computeL(lc_speed, bubbleSort(10, ltime));
-    long tmpr_speed = mv.computeR(rc_speed, bubbleSort(10, rtime));
+    long tmpl_speed = mv.computeL(lc_speed, insertionSort(10, ltime));
+    long tmpr_speed = mv.computeR(rc_speed, insertionSort(10, rtime));
     md.setSpeeds(tmpl_speed, -tmpr_speed);
     distanceL = 2 * 3 * M_PI * (getLticks() / 562.25);
     distanceR = 2 * 3 * M_PI * (getRticks() / 562.25);
@@ -365,6 +369,26 @@ void Encoder::moveRight(long setLSpeed, long setRSpeed, DualVNH5019MotorShield m
   }
   md.setBrakes(300, 300);
   //moveForward(setLSpeed, setRSpeed, md, mv, 1);
+}
+
+void Encoder::rampUp(long rpm, DualVNH5019MotorShield md, Movement mv) {
+  long tmplspeed = mv.convertRSpeed(1);
+  long tmprspeed = mv.convertLSpeed(1);
+  long tmp_rpm = 0;
+  while (tmp_rpm < rpm) {
+    /*
+      if(tmplspeed<lspeed){
+      tmplspeed = lspeed;
+      }
+      if(tmprspeed>rspeed){
+      tmprspeed = rspeed;
+      }
+    */
+    tmplspeed = mv.convertRSpeed(tmp_rpm);
+    tmprspeed = mv.convertLSpeed(tmp_rpm);
+    tmp_rpm++;
+    md.setSpeeds(-tmplspeed, -tmprspeed);
+  }
 }
 
 void Encoder::rampDown(long rpm, DualVNH5019MotorShield md, Movement mv) {
@@ -426,13 +450,12 @@ void Encoder::moveRightHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShiel
 void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield md, Movement mv, Sensor sensor) {
   int checked = 0;
 
-  float rpm_cali = 10;
+  float rpm_cali = 20;
   long lc_speed = mv.convertLSpeed(rpm_cali);
   long rc_speed = mv.convertRSpeed(rpm_cali);
 
   //Check if front and back is aligned
   while (checked == 0) {
-    Serial.println("sad");
     float sensorA1 = sensor.LFDistance(1);//round(sensor.LFDistance(1)); // left front
     float sensorA2 = sensor.LBDistance(1); //round(sensor.LBDistance(1)); // left back
 
@@ -507,8 +530,6 @@ void  Encoder:: wallHugging(long l_speed, long r_speed, DualVNH5019MotorShield m
     Serial.print("Sensor A2: "); Serial.println(sensorA2);
   }  //md.setM1Brake(-250);
   //exit(1);
-  Serial.println("happy");
-  Serial.println();
 }
 
 void Encoder::checkList1(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum, Sensor sensor) {
@@ -518,7 +539,7 @@ void Encoder::checkList1(long setLSpeed, long setRSpeed, DualVNH5019MotorShield 
   long tmpl_speed = 0;
   long tmpr_speed = 0;
   //resetDistance();
-  //rampUp(100, md, mv); //remember to change this when change rpm
+  rampUp(100, md, mv); //remember to change this when change rpm
   //md.setSpeeds(setLSpeed, setRSpeed);
   delay(20);
   //delay(2000);
@@ -526,8 +547,8 @@ void Encoder::checkList1(long setLSpeed, long setRSpeed, DualVNH5019MotorShield 
     resetTicks();
     while (distanceTraversed <= 8.4) { // while havent reach distance, calibrate speed every 0.01seconds
       //delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
-      tmpl_speed = mv.computeL(setLSpeed, bubbleSort(10, ltime));
-      tmpr_speed = mv.computeR(setRSpeed, bubbleSort(10, rtime));
+      tmpl_speed = mv.computeL(setLSpeed, insertionSort(10, ltime));
+      tmpr_speed = mv.computeR(setRSpeed, insertionSort(10, rtime));
       md.setSpeeds(tmpl_speed, tmpr_speed);
       distanceL = 2 * 3 * M_PI * (getLticks() / 562.25);
       distanceR = 2 * 3 * M_PI * (getRticks() / 562.25);
@@ -568,7 +589,7 @@ void Encoder::checkList2(long setLSpeed, long setRSpeed, DualVNH5019MotorShield 
   long tmpl_speed = 0;
   long tmpr_speed = 0;
   //resetDistance();
-  //rampUp(50, md, mv); //remember to change this when change rpm
+  rampUp(50, md, mv); //remember to change this when change rpm
   //md.setSpeeds(setLSpeed, setRSpeed);
   delay(20);
   //delay(2000);
@@ -578,8 +599,8 @@ void Encoder::checkList2(long setLSpeed, long setRSpeed, DualVNH5019MotorShield 
     // for one grid the braking mechanism cannot stop in time. need take into account decceleration. 7.8 works good for 1 grid
     while (distanceTraversed <= 8.4) { // while havent reach distance, calibrate speed every 0.01seconds
       delay(0.005); // should delay so the speed don't keep changing. need to tweak to get best interval
-      tmpl_speed = mv.computeL(setLSpeed, bubbleSort(10, ltime));
-      tmpr_speed = mv.computeR(setRSpeed, bubbleSort(10, rtime));
+      tmpl_speed = mv.computeL(setLSpeed, insertionSort(10, ltime));
+      tmpr_speed = mv.computeR(setRSpeed, insertionSort(10, rtime));
       //Serial.print("tmpl_speed "); Serial.println(tmpl_speed);
       //Serial.print("tmpr_speed "); Serial.println(tmpr_speed);
       md.setSpeeds(tmpl_speed, tmpr_speed);
@@ -629,7 +650,7 @@ void Encoder::moveLoop(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md
   float distanceTraversed = 0;
   float distanceL = 0;
   float distanceR = 0;
-  rampUp(setLSpeed, setRSpeed, md, mv); //remember to change this when change rpm
+  rampUp(50, md, mv); //remember to change this when change rpm
   while(tmp_count < 4){
     while (sensor.FLDistance(1)>= 20 || sensor.FMDistance(1) >=20 || sensor.FRDistance(1) >=20 ) { // while havent reach distance, calibrate speed every 0.01seconds
       if( sensor.LBDistance(1) < 2.5 || sensor.LFDistance(1) < 2.5){
@@ -663,8 +684,8 @@ void Encoder::moveLoop(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md
       distanceR = 6 * M_PI * (getRticks() / 562.25);
       distanceTraversed = (distanceL + distanceR) / 2;
       delay(100); // should delay so the speed don't keep changing. need to tweak to get best interval
-      tmpl_speed = mv.computeL(setLSpeed, bubbleSort(10, ltime));
-      tmpr_speed = mv.computeR(setRSpeed, bubbleSort(10, rtime));
+      tmpl_speed = mv.computeL(setLSpeed, insertionSort(10, ltime));
+      tmpr_speed = mv.computeR(setRSpeed, insertionSort(10, rtime));
       md.setSpeeds(tmpl_speed, tmpr_speed);
     }
     moveRight(setLSpeed, setRSpeed, md, mv, 90);    
