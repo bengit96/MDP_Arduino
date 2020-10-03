@@ -2,22 +2,26 @@
 #include "Movement.h"
 #include <math.h>
 
-float lm = -2.7395;
-float lc = -54.2770;
+/*
+float lm = -2.8684; //battery21 
+float lc = -34.3793;// battery21
 
-float rm =  3.0843;
-float rc = 42.1976;
+float rm =   2.9334; //battery21 
+float rc = 33.2671; //battery21 
+*/
+
+ //6.24 batt 20
+
+float lm = -2.8464; //battery 20
+float lc = -35.1899; //battery 20
+
+float rm = 3.1557; //battery 20
+float rc = 33.0283; //battery 20
 
 
-Movement::Movement(int pA1,int pB1, int pA2,  int pB2, float lP,float lI, float lD, float rP,float rI, float rD){
+Movement::Movement(float lP,float lI, float lD, float rP,float rI, float rD){
 
 	
-	//Left
-	pinA1 = pA1;
-	pinB1 = pB1;
-	//Right
-	pinA2 = pA2;
-	pinB2 = pB2;
   lkp = lP;
   lki = lI;
   lkd = lD;
@@ -44,6 +48,15 @@ Movement::Movement(int pA1,int pB1, int pA2,  int pB2, float lP,float lI, float 
 }
 
 
+/*
+float lm = -2.6935; //battery21 
+float lc = -35.4937;// battery21
+
+float rm =   2.8675; //battery21 
+float rc = 22.7487; //battery21 
+*/
+
+
 float Movement::computeL(long setLSpeed, unsigned long ltime){
   float currentRPM = (pow(10,6) * 60 /ltime )/ 562.25;
   float setLRPM = convertLRPM(setLSpeed); 
@@ -62,7 +75,8 @@ float Movement::computeL(long setLSpeed, unsigned long ltime){
   */
   //float u = currentRPM + lk1 * currentError + lk2 * previousLError + lk3 * previousLError2;
   
-  float u = currentRPM + lkp * currentError + lkd * previousLError;// + k3 * previousLError2;
+  //float u = currentRPM + lkp * currentError + lkd * (currentError - previousLError) + lki * LErrors;
+  float u = currentRPM + lkp * currentError + lkd * (currentError - previousLError);
    //float u = currentRPM + lkp * currentError + (lkd * (currentError-previousLError)) + lki * LErrors; //random online method
   //Serial.print("lerrors");Serial.println(LErrors);
  /*
@@ -119,7 +133,8 @@ float Movement::computeR(long setRSpeed, unsigned long rtime){
   }
   */
   //float u = currentRPM + rk1 * currentError + rk2 * previousRError + rk3 * previousRError2;
-  float u = currentRPM + rkp * currentError + rkd * previousRError;// + k3 * previousRError2;
+  //float u = currentRPM + rkp * currentError + rkd * (currentError - previousRError) + rki * RErrors;
+  float u = currentRPM + rkp * currentError + rkd * (currentError - previousRError);
   //float u = currentRPM + rkp * currentError + (rkd * (currentError-previousRError)) + rki * RErrors; //random online method
   //Serial.print("rerrors");Serial.println(RErrors);
   if( u >= 120 ){

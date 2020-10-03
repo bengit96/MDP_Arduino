@@ -1,3 +1,4 @@
+
 #ifdef Arduino
   #include "Arduino.h"
 #elif defined(SPARK)
@@ -26,8 +27,7 @@ SharpIR::SharpIR(int irPin, long sensorModel) {
     #endif
 }
 
-//insertionSort
-void SharpIR::insertionSort(int a[], int size){
+void SharpIR::sort(int a[], int size){
     int temp;
     for (int i=0; i<size; i++){
       for (int j=i; j>0; j--){
@@ -41,7 +41,6 @@ void SharpIR::insertionSort(int a[], int size){
       }
     }
 }
-
 /*
 // Sort an array
 void SharpIR::sort(int a[], int size) {
@@ -59,7 +58,6 @@ void SharpIR::sort(int a[], int size) {
     }
 }
 */
-
 // Read distance and compute it
 float SharpIR::distance() {
 
@@ -74,7 +72,7 @@ float SharpIR::distance() {
     }
     
     // Sort it 
-    insertionSort(ir_val,NB_SAMPLE);
+    sort(ir_val,NB_SAMPLE);
 
     
     if (_model==1080) {
@@ -89,8 +87,8 @@ float SharpIR::distance() {
         // puntualDistance=61.573*pow(voltFromRaw/1000, -1.1068);
         
         // Different expressions required as the Photon has 12 bit ADCs vs 10 bit for Arduinos
-          //distanceCM = 60.374 * pow(map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0, -1.16);
-          distanceCM = ir_val[NB_SAMPLE / 2];
+          distanceCM = 60.374 * pow(map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0, -1.16);
+          //distanceCM = ir_val[NB_SAMPLE / 2];
           //distanceCM = (float)9462/(ir_val[NB_SAMPLE / 2] - 16.92);
           //distanceCM = 61.573 * pow(map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0, -1.1068);
 
@@ -101,17 +99,18 @@ float SharpIR::distance() {
 }
 
 float SharpIR::median_Voltage_Sampling() {
-	
-	int ir_val[NB_SAMPLE];
-	float voltage;
+  
+  int ir_val[NB_SAMPLE];
+  float voltage;
 
-	for (int i=0; i<NB_SAMPLE; i++){
-		// Read analog value
-		ir_val[i] = analogRead(_irPin);
-	}
+  for (int i=0; i<NB_SAMPLE; i++){
+    // Read analog value
+    ir_val[i] = analogRead(_irPin);
+    //Serial.println(ir_val[i]);
+  }
 
-	insertionSort(ir_val,NB_SAMPLE);
+  sort(ir_val,NB_SAMPLE);
 
-	return voltage = map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0;
+  return voltage = map(ir_val[NB_SAMPLE / 2], 0, 1023, 0, 5000)/1000.0;
   
 }

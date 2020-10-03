@@ -20,13 +20,8 @@ class Movement {
 	    float previousRError2 = 0;
       float LErrors = 0;
       float RErrors = 0;
-		//Left
-		int pinA1;
-		int pinA2;
-		//Right
-		int pinB1;
-		int pinB2;		 
-		Movement(int, int, int, int, float, float, float,float,float,float);
+	 
+		Movement(float, float, float,float,float,float);
 		float computeL(long setLSpeed, unsigned long ltime);
 		float computeR(long setRSpeed, unsigned long rtime);
 		//void moveForward(long setLSpeed, long setRSpeed, Encoder en , DualVNH5019MotorShield md);

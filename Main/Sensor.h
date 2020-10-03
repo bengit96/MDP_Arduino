@@ -9,10 +9,10 @@ class Sensor{
 		float RDistance(int method);
 		float LBDistance(int method);
 		float LFDistance(int method);
-		float FLDistance(int method);
+    float FLDistance(int method);
 		float FMDistance(int method);
 		float FRDistance(int method);
-		int convertLong(float distance);
-		int convertShort(float distance);
-		void caliSensor();
+    int convertLong(float distance);
+    int convertShort(float distance);
+    void caliSensor();
 };
