@@ -14,4 +14,5 @@ class Sensor{
 		float FRDistance(int method);
     int convertLong(float distance);
     int convertShort(float distance);
+    void caliSensor();
 };
