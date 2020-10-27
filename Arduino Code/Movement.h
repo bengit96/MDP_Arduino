@@ -1,33 +1,48 @@
-long static errorL[2] = {-1};
-long static errorR[2] = {-1};
 
 
+  static volatile long ltick; // volatile will tell the compiler that the value must be checked every time
+  static volatile long rtick; 
+  static unsigned long init_ltime; 
+  static unsigned long init_rtime;  
+  static unsigned long ltime[10];
+  static unsigned long rtime[10];
 class Movement {
 
 	private:
-		float lk1, lk2, lk3,lkp,lkd,lki;
-	    float rk1, rk2, rk3,rkp,rkd,rki;
-		float l_speed, r_speed;
 	public: 
-	    float distanceL = 0;
-	    float distanceR = 0;
-	    float distanceTraversed = 0;
-	    float previousLSpeed = 0;
-	    float previousLError = 0;
-	    float previousLError2 = 0;
-	    float previousRSpeed = 0;
-	    float previousRError = 0;
-	    float previousRError2 = 0;
-      float LErrors = 0;
-      float RErrors = 0;
-	 
-		Movement(float, float, float,float,float,float);
-		float computeL(long setLSpeed, unsigned long ltime);
-		float computeR(long setRSpeed, unsigned long rtime);
-		//void moveForward(long setLSpeed, long setRSpeed, Encoder en , DualVNH5019MotorShield md);
-	    float convertLSpeed(float rpm);
-	    float convertRSpeed(float rpm);
-      float convertRRPM(float rspeed);
-      float convertLRPM(float lspeed);
-	    void resetDistance();
+		//Left
+		int pinA1;
+		int pinB1;
+		//Right
+		int pinA2;
+		int pinB2;		 
+		Movement(int, int, int, int);
+		void init();
+		void calibrate(int numIteration, DualVNH5019MotorShield md);
+		void ltickIncrement();
+		void rtickIncrement();
+		void resetTicks();
+		void tickCal(int numIteration, DualVNH5019MotorShield md);
+    void stepLTest(DualVNH5019MotorShield md, int timeWidth);
+    void stepRTest(DualVNH5019MotorShield md, int timeWidth);		
+		int getLticks();
+		int getRticks();
+		void stepPLTest(DualVNH5019MotorShield md);
+		void stepPRTest(DualVNH5019MotorShield md);
+    void moveForward(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid, int gridNum, Sensor sensor);
+    int moveForwardGoal(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid, int gridNum, Sensor sensor,int hori, int last);
+    //int moveForwardGoal(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum, Sensor sensor);
+    //void moveLoop(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, Sensor sensor);
+    void moveLeft(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid, float degree, Sensor sensor, int cal);
+    void moveRight(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid, float degree, Sensor sensor, int cal);
+    //void rampUp(long rpm, DualVNH5019MotorShield md, Movement m);
+    //void rampDown(long rpm, DualVNH5019MotorShield md, Movement m);
+    void moveForwardHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid, int distance);
+    long unsigned int bubbleSort(int numIteration, unsigned long * timeWidth);
+    void moveLeftHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid);
+    void moveRightHug(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid);
+    void wallHugging(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, PID pid, Sensor sensor);
+    //void checkList1(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum, Sensor sensor);
+    //void checkList2(long setLSpeed, long setRSpeed, DualVNH5019MotorShield md, Movement mv, int gridNum, Sensor sensor);
+
 };	

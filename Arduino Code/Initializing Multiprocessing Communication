@@ -1,0 +1,1740 @@
+Initializing Multiprocessing Communication
+server socket: <bluetooth.bluez.BluetoothSocket object at 0x6b263670>
+Establishing connection with Arduino
+Successfully connected with Arduino: /dev/serial/by-id/usb-Arduino__www.arduino.cc__0043_A4139373630351905032-if00
+Establishing connection with Algorithm
+Successfully connected with Algorithm: ('192.168.20.239', 54890)
+Establishing connection with Android N7 Tablet...
+Successfully connected to Android at address: ('68:B3:5E:58:97:7E', 3)
+Connected to Arduino, Algorithm and Android
+From Algorithm:
+b'c\ns'
+Started all processes: read-arduino, read-algorithm, read-android, write, image
+Multiprocess communication session started
+You can reconnect to RPi after disconnecting now
+To Arduino:
+c
+
+To Arduino:
+s
+
+From Arduino:
+b'6.51 6.57 40.00 40.00 40.00 111.54\r\n'
+To Algorithm:
+b'6.51 6.57 40.00 40.00 40.00 111.54\n'
+From android:
+b'ES|'
+To Algorithm:
+b'ES|\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80e001c0038007000000000000000000000000000000000000000000000007000e001f", "obstacle": "000000000"}], "robotPosition":[1, 18,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80e001c0038007000000000000000000000000000000000000000000000007000e001f", "obstacle": "000000000"}], "robotPosition":[1, 18,0]}\n'
+From Arduino:
+b'6.78 6.98 40.00 40.00 40.00 153.46\r\n'
+To Algorithm:
+b'6.78 6.98 40.00 40.00 40.00 153.46\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01c0038007000e00000000000000000000000000000000000000000007000e001f", "obstacle": "00000000000"}], "robotPosition":[1, 17,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01c0038007000e00000000000000000000000000000000000000000007000e001f", "obstacle": "00000000000"}], "robotPosition":[1, 17,0]}\n'
+From Arduino:
+b'7.49 7.55 40.00 40.00 40.00 123.13\r\n'
+To Algorithm:
+b'7.49 7.55 40.00 40.00 40.00 123.13\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe038007000e001c0000000000000000000000000000000000000007000e001f", "obstacle": "0000000000000"}], "robotPosition":[1, 16,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe038007000e001c0000000000000000000000000000000000000007000e001f", "obstacle": "0000000000000"}], "robotPosition":[1, 16,0]}\n'
+From Arduino:
+b'6.31 6.24 40.00 40.00 40.00 106.28\r\n'
+To Algorithm:
+b'6.31 6.24 40.00 40.00 40.00 106.28\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07000e001c0038000000000000000000000000000000000007000e001f", "obstacle": "000000000000000"}], "robotPosition":[1, 15,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07000e001c0038000000000000000000000000000000000007000e001f", "obstacle": "000000000000000"}], "robotPosition":[1, 15,0]}\n'
+From Arduino:
+b'6.94 7.15 34.98 35.42 34.68 14.33\r\n'
+To Algorithm:
+b'6.94 7.15 34.98 35.42 34.68 14.33\n'
+From Algorithm:
+b'c\nf1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00e001c0038007000000000000000000000000000000007000e001f", "obstacle": "000000000100000"}], "robotPosition":[1, 14,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00e001c0038007000000000000000000000000000000007000e001f", "obstacle": "000000000100000"}], "robotPosition":[1, 14,0]}\n'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Arduino:
+b'5.84 5.44 25.62 25.91 25.62 73.25\r\n'
+To Algorithm:
+b'5.84 5.44 25.62 25.91 25.62 73.25\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01c0038007000e00000000000000000000000000007000e001f", "obstacle": "00000000010000700"}], "robotPosition":[1, 13,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01c0038007000e00000000000000000000000000007000e001f", "obstacle": "00000000010000700"}], "robotPosition":[1, 13,0]}\n'
+From Arduino:
+b'6.20 6.12 15.48 13.08 15.06 85.51\r\n'
+To Algorithm:
+b'6.20 6.12 15.48 13.08 15.06 85.51\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe038007000e00000000000000000000000000007000e001f", "obstacle": "0000000001000003800"}], "robotPosition":[1, 12,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe038007000e00000000000000000000000000007000e001f", "obstacle": "0000000001000003800"}], "robotPosition":[1, 12,0]}\n'
+To Arduino:
+f1
+
+From Arduino:
+b'6.40 6.45 6.58 2.70 6.50 101.65\r\n'
+To Algorithm:
+b'6.40 6.45 6.58 2.70 6.50 101.65\n'
+From Algorithm:
+b'r83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07000e00000000000000000000000000007000e001f", "obstacle": "00000000010000001c0"}], "robotPosition":[1, 11,0]}'
+To Arduino:
+r83
+To Android:
+
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07000e00000000000000000000000000007000e001f", "obstacle": "00000000010000001c0"}], "robotPosition":[1, 11,0]}\n'
+From Arduino:
+b'7.20 6.69 40.00 40.00 40.00 70.68\r\n'
+To Algorithm:
+b'7.20 6.69 40.00 40.00 40.00 70.68\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07e00e00000000000000000000000000007000e001f", "obstacle": "000000000100000003800"}], "robotPosition":[1, 11,90]}'
+To Arduino:
+f1
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07e00e00000000000000000000000000007000e001f", "obstacle": "000000000100000003800"}], "robotPosition":[1, 11,90]}\n'
+From Arduino:
+b'6.94 7.42 40.00 40.00 40.00 70.68\r\n'
+To Algorithm:
+b'6.94 7.42 40.00 40.00 40.00 70.68\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07f00f00000000000000000000000000007000e001f", "obstacle": "000000000100000001e00"}], "robotPosition":[2, 11,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07f00f00000000000000000000000000007000e001f", "obstacle": "000000000100000001e00"}], "robotPosition":[2, 11,90]}\n'
+From Arduino:
+b'7.06 40.00 40.00 40.00 40.00 76.12\r\n'
+To Algorithm:
+b'7.06 40.00 40.00 40.00 40.00 76.12\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07f80f80010002000000000000000000007000e001f", "obstacle": "000000000100000000f0000"}], "robotPosition":[3, 11,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01fe03fc07f80f80010002000000000000000000007000e001f", "obstacle": "000000000100000000f0000"}], "robotPosition":[3, 11,90]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 13.43\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 13.43\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01ff03fe07fc0fc0018003000000000000000000007000e001f", "obstacle": "0000000001000000001e000"}], "robotPosition":[4, 11,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07c00ff01ff03fe07fc0fc0018003000000000000000000007000e001f", "obstacle": "0000000001000000001e000"}], "robotPosition":[4, 11,90]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 13.11\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 13.11\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ff07fe0fe001c003800000000000000000007000e001f", "obstacle": "00000000018000000001e0000"}], "robotPosition":[5, 11,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ff07fe0fe001c003800000000000000000007000e001f", "obstacle": "00000000018000000001e0000"}], "robotPosition":[5, 11,90]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 68.13\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 68.13\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7fe0fe001c003800000000000000000007000e001f", "obstacle": "0000000001800000000078000"}], "robotPosition":[5, 11,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7fe0fe001c003800000000000000000007000e001f", "obstacle": "0000000001800000000078000"}], "robotPosition":[5, 11,0]}\n'
+From Arduino:
+b'40.00 5.62 40.00 40.00 40.00 81.41\r\n'
+To Algorithm:
+b'40.00 5.62 40.00 40.00 40.00 81.41\n'
+From Algorithm:
+b'f1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fe001c003800700000000000000007000e001f", "obstacle": "000000000180000000001e00000"}], "robotPosition":[5, 10,0]}'
+To Arduino:
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fe001c003800700000000000000007000e001f", "obstacle": "000000000180000000001e00000"}], "robotPosition":[5, 10,0]}\n'
+f1
+
+From Arduino:
+b'5.87 6.04 40.00 32.54 40.00 78.23\r\n'
+To Algorithm:
+b'5.87 6.04 40.00 32.54 40.00 78.23\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03c0038007000e0000000000007000e001f", "obstacle": "000000000180000000001e0100000"}], "robotPosition":[5, 9,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03c0038007000e0000000000007000e001f", "obstacle": "000000000180000000001e0100000"}], "robotPosition":[5, 9,0]}\n'
+From Arduino:
+b'6.40 40.00 40.00 40.00 40.00 72.56\r\n'
+To Algorithm:
+b'6.40 40.00 40.00 40.00 40.00 72.56\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1f8007000e001c000000007000e001f", "obstacle": "000000000180000000001e01000000000"}], "robotPosition":[5, 8,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1f8007000e001c000000007000e001f", "obstacle": "000000000180000000001e01000000000"}], "robotPosition":[5, 8,0]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 27.27\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 27.27\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1ff83f000e001c003800007000e001f", "obstacle": "000000000180000000001e0100004000000"}], "robotPosition":[5, 7,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1ff83f000e001c003800007000e001f", "obstacle": "000000000180000000001e0100004000000"}], "robotPosition":[5, 7,0]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 25.97\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 25.97\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1ff83fe07e001c003800707000e001f", "obstacle": "000000000180000000001e010000402000000"}], "robotPosition":[5, 6,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1ff83fe07e001c003800707000e001f", "obstacle": "000000000180000000001e010000402000000"}], "robotPosition":[5, 6,0]}\n'
+From Arduino:
+b'40.00 40.00 37.56 40.00 40.00 51.84\r\n'
+To Algorithm:
+b'40.00 40.00 37.56 40.00 40.00 51.84\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1ff83fe07e001c003800707040e081f", "obstacle": "000000000180000000001e010000402000000"}], "robotPosition":[5, 6,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe1ff83fe07e001c003800707040e081f", "obstacle": "000000000180000000001e010000402000000"}], "robotPosition":[5, 6,270]}\n'
+From Arduino:
+b'40.00 5.95 34.38 40.00 37.22 55.66\r\n'
+To Algorithm:
+b'40.00 5.95 34.38 40.00 37.22 55.66\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe3ff87fe0fe001c0038007070c0e181f", "obstacle": "000000000180000000001e01000020080000000"}], "robotPosition":[4, 6,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff03fe3ff87fe0fe001c0038007070c0e181f", "obstacle": "000000000180000000001e01000020080000000"}], "robotPosition":[4, 6,270]}\n'
+From Arduino:
+b'6.20 17.09 26.15 24.55 26.69 8.51\r\n'
+To Algorithm:
+b'6.20 17.09 26.15 24.55 26.69 8.51\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff07fe3ff87fe0fe003c0038007070c0e181f", "obstacle": "000000000180000000001e00800010040400000"}], "robotPosition":[3, 6,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff07fe3ff87fe0fe003c0038007070c0e181f", "obstacle": "000000000180000000001e00800010040400000"}], "robotPosition":[3, 6,270]}\n'
+From Arduino:
+b'16.90 16.81 15.48 12.17 14.99 8.51\r\n'
+To Algorithm:
+b'16.90 16.81 15.48 12.17 14.99 8.51\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff0ffe3ff87fe0fe007c0038007070c0e181f", "obstacle": "000000000180000000001e00400008020300000"}], "robotPosition":[2, 6,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff0ffe3ff87fe0fe007c0038007070c0e181f", "obstacle": "000000000180000000001e00400008020300000"}], "robotPosition":[2, 6,270]}\n'
+From Arduino:
+b'16.90 15.85 6.31 2.21 5.53 8.73\r\n'
+To Algorithm:
+b'16.90 15.85 6.31 2.21 5.53 8.73\n'
+From Algorithm:
+b'l83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 6,270]}'
+To Arduino:
+l83
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 6,270]}\n'
+From Arduino:
+b'40.00 40.00 14.86 11.34 13.84 7.37\r\n'
+To Algorithm:
+b'40.00 40.00 14.86 11.34 13.84 7.37\n'
+From Algorithm:
+b'f1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 6,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 6,180]}\n'
+To Arduino:
+f1
+
+From Arduino:
+b'40.00 6.69 6.88 2.64 5.84 7.22\r\n'
+To Algorithm:
+b'40.00 6.69 6.88 2.64 5.84 7.22\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 7,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 7,180]}\n'
+From Arduino:
+b'7.06 5.70 7.05 2.85 5.89 16.01\r\n'
+To Algorithm:
+b'7.06 5.70 7.05 2.85 5.89 16.01\n'
+From Algorithm:
+b'r83'
+From Algorithm:
+To Arduino:
+r83
+
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 7,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe00fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101c000000"}], "robotPosition":[1, 7,270]}\n'
+From Arduino:
+b'6.03 6.36 15.78 12.49 16.39 93.12\r\n'
+To Algorithm:
+b'6.03 6.36 15.78 12.49 16.39 93.12\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[1, 7,0]}'
+To Arduino:
+f1
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[1, 7,0]}\n'
+From Arduino:
+b'6.73 7.28 6.11 2.44 6.90 68.13\r\n'
+To Algorithm:
+b'6.73 7.28 6.11 2.44 6.90 68.13\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[1, 6,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[1, 6,0]}\n'
+From Arduino:
+b'7.04 7.05 40.00 40.00 40.00 15.63\r\n'
+To Algorithm:
+b'7.04 7.05 40.00 40.00 40.00 15.63\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[1, 6,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[1, 6,90]}\n'
+From Arduino:
+b'6.40 6.15 36.88 40.00 40.00 16.67\r\n'
+To Algorithm:
+b'6.40 6.15 36.88 40.00 40.00 16.67\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[2, 6,90]}'
+To Arduino:
+f1
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0fe01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101e000000"}], "robotPosition":[2, 6,90]}\n'
+From Arduino:
+b'6.57 40.00 26.15 37.98 40.00 8.30\r\n'
+To Algorithm:
+b'6.57 40.00 26.15 37.98 40.00 8.30\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101f000000"}], "robotPosition":[3, 6,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101f000000"}], "robotPosition":[3, 6,90]}\n'
+From Arduino:
+b'40.00 40.00 16.39 33.76 37.22 57.05\r\n'
+To Algorithm:
+b'40.00 40.00 16.39 33.76 37.22 57.05\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101f000000"}], "robotPosition":[4, 6,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101f000000"}], "robotPosition":[4, 6,90]}\n'
+From Arduino:
+b'40.00 40.00 6.66 22.98 26.15 61.36\r\n'
+To Algorithm:
+b'40.00 40.00 6.66 22.98 26.15 61.36\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101f000000"}], "robotPosition":[5, 6,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87fe0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040101f000000"}], "robotPosition":[5, 6,90]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 27.27\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 27.27\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040180f800000"}], "robotPosition":[5, 6,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fc0038007070c0e181f", "obstacle": "000000000180000000001e002000040180f800000"}], "robotPosition":[5, 6,0]}\n'
+From Arduino:
+b'40.00 6.04 40.00 40.00 40.00 7.72\r\n'
+To Algorithm:
+b'40.00 6.04 40.00 40.00 40.00 7.72\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fc0038007070e0e181f", "obstacle": "000000000180000000001e002000040180f800000"}], "robotPosition":[5, 5,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fc0038007070e0e181f", "obstacle": "000000000180000000001e002000040180f800000"}], "robotPosition":[5, 5,0]}\n'
+From Arduino:
+b'6.40 37.62 36.22 31.66 34.68 7.93\r\n'
+To Algorithm:
+b'6.40 37.62 36.22 31.66 34.68 7.93\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01f8007070e0e1c1f", "obstacle": "000000000180000000001e002000040180f88000000"}], "robotPosition":[5, 4,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01f8007070e0e1c1f", "obstacle": "000000000180000000001e002000040180f88000000"}], "robotPosition":[5, 4,0]}\n'
+From Arduino:
+b'33.46 40.00 24.63 24.55 25.45 84.81\r\n'
+To Algorithm:
+b'33.46 40.00 24.63 24.55 25.45 84.81\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01ffc3f070e0e1c1f", "obstacle": "000000000180000000001e002000040180f8800000000"}], "robotPosition":[5, 3,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01ffc3f070e0e1c1f", "obstacle": "000000000180000000001e002000040180f8800000000"}], "robotPosition":[5, 3,0]}\n'
+From Arduino:
+b'40.00 40.00 14.72 11.64 14.53 78.23\r\n'
+To Algorithm:
+b'40.00 40.00 14.72 11.64 14.53 78.23\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01ffc3fff7e0e1c1f", "obstacle": "000000000180000000001e002000040180f880000000000"}], "robotPosition":[5, 2,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01ffc3fff7e0e1c1f", "obstacle": "000000000180000000001e002000040180f880000000000"}], "robotPosition":[5, 2,0]}\n'
+From Arduino:
+b'40.00 40.00 36.22 40.00 40.00 15.19\r\n'
+To Algorithm:
+b'40.00 40.00 36.22 40.00 40.00 15.19\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01ffc3fff7e0e1c1f", "obstacle": "000000000180000000001e002000040180f880000000000"}], "robotPosition":[5, 2,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe01ffc3fff7e0e1c1f", "obstacle": "000000000180000000001e002000040180f880000000000"}], "robotPosition":[5, 2,270]}\n'
+From Arduino:
+b'40.00 7.42 24.00 32.24 35.90 14.92\r\n'
+To Algorithm:
+b'40.00 7.42 24.00 32.24 35.90 14.92\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0e1c1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[4, 2,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0e1c1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[4, 2,270]}\n'
+From Arduino:
+b'7.56 7.95 14.93 22.65 24.79 15.26\r\n'
+To Algorithm:
+b'7.56 7.95 14.93 22.65 24.79 15.26\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0e3c1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[3, 2,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0e3c1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[3, 2,270]}\n'
+From Arduino:
+b'5.07 5.62 5.99 12.49 15.78 17.05\r\n'
+To Algorithm:
+b'5.07 5.62 5.99 12.49 15.78 17.05\n'
+From Algorithm:
+b'r83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0e7c1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[2, 2,270]}'
+To Arduino:
+r83
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0e7c1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[2, 2,270]}\n'
+From Arduino:
+b'17.28 18.25 16.71 14.17 17.05 100.49\r\n'
+To Algorithm:
+b'17.28 18.25 16.71 14.17 17.05 100.49\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0efc1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[2, 2,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7ffffe0efc1f", "obstacle": "000000000180000000001e002000040180f8c0000000000"}], "robotPosition":[2, 2,0]}\n'
+From Arduino:
+b'18.45 17.86 7.72 3.98 7.36 106.28\r\n'
+To Algorithm:
+b'18.45 17.86 7.72 3.98 7.36 106.28\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[2, 1,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[2, 1,0]}\n'
+From Arduino:
+b'15.60 16.02 16.08 13.08 15.78 8.73\r\n'
+To Algorithm:
+b'15.60 16.02 16.08 13.08 15.78 8.73\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[2, 1,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[2, 1,270]}\n'
+From Arduino:
+b'16.19 4.84 6.58 2.64 6.42 8.56\r\n'
+To Algorithm:
+b'16.19 4.84 6.58 2.64 6.42 8.56\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[1, 1,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[1, 1,270]}\n'
+From Arduino:
+b'7.20 6.69 7.81 4.09 7.52 118.45\r\n'
+To Algorithm:
+b'7.20 6.69 7.81 4.09 7.52 118.45\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[1, 1,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[1, 1,0]}\n'
+From Arduino:
+b'6.73 6.15 40.00 40.00 40.00 15.54\r\n'
+To Algorithm:
+b'6.73 6.15 40.00 40.00 40.00 15.54\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[1, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[1, 1,90]}\n'
+From Arduino:
+b'6.88 6.79 38.26 40.00 40.00 15.63\r\n'
+To Algorithm:
+b'6.88 6.79 38.26 40.00 40.00 15.63\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[2, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffc1f", "obstacle": "000000000180000000001e002000040180f8c000000000000"}], "robotPosition":[2, 1,90]}\n'
+From Arduino:
+b'7.39 7.70 26.33 40.00 40.00 15.01\r\n'
+To Algorithm:
+b'7.39 7.70 26.33 40.00 40.00 15.01\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000010"}], "robotPosition":[3, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000010"}], "robotPosition":[3, 1,90]}\n'
+From Arduino:
+b'6.17 5.92 16.39 39.60 40.00 89.18\r\n'
+To Algorithm:
+b'6.17 5.92 16.39 39.60 40.00 89.18\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000010"}], "robotPosition":[4, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffff8ffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000010"}], "robotPosition":[4, 1,90]}\n'
+From Arduino:
+b'6.60 6.91 6.64 40.00 40.00 153.46\r\n'
+To Algorithm:
+b'6.60 6.91 6.64 40.00 40.00 153.46\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 1,90]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 45.96\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 45.96\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 1,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 1,180]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 44.60\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 44.60\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 2,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 2,180]}\n'
+From Arduino:
+b'17.65 17.86 40.00 40.00 40.00 116.95\r\n'
+To Algorithm:
+b'17.65 17.86 40.00 40.00 40.00 116.95\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 2,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffcffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000008"}], "robotPosition":[5, 2,90]}\n'
+From Arduino:
+b'18.05 6.91 40.00 40.00 40.00 106.28\r\n'
+To Algorithm:
+b'18.05 6.91 40.00 40.00 40.00 106.28\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffeffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000004"}], "robotPosition":[6, 2,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffeffe1f", "obstacle": "000000000180000000001e002000040180f8c000000000004"}], "robotPosition":[6, 2,90]}\n'
+From Arduino:
+b'7.13 18.35 40.00 40.00 40.00 7.03\r\n'
+To Algorithm:
+b'7.13 18.35 40.00 40.00 40.00 7.03\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffffff1f", "obstacle": "000000000180000000001e002000040180f8c000000000002"}], "robotPosition":[7, 2,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff01fe03ffc7fffffffff1f", "obstacle": "000000000180000000001e002000040180f8c000000000002"}], "robotPosition":[7, 2,90]}\n'
+From Arduino:
+b'18.88 18.78 40.00 40.00 40.00 15.01\r\n'
+To Algorithm:
+b'18.88 18.78 40.00 40.00 40.00 15.01\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff81ff03ffe7fffffffff9f", "obstacle": "000000000180000000001e002000040180fc500000000000040"}], "robotPosition":[8, 2,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8007f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ff81ff03ffe7fffffffff9f", "obstacle": "000000000180000000001e002000040180fc500000000000040"}], "robotPosition":[8, 2,90]}\n'
+From Arduino:
+b'19.19 19.31 40.00 40.00 40.00 14.66\r\n'
+To Algorithm:
+b'19.19 19.31 40.00 40.00 40.00 14.66\n'
+From Algorithm:
+b'l83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffdf", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 2,90]}'
+To Arduino:
+l83
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffdf", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 2,90]}\n'
+From Arduino:
+b'40.00 40.00 16.47 13.70 16.88 49.53\r\n'
+To Algorithm:
+b'40.00 40.00 16.47 13.70 16.88 49.53\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffdf", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 2,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffdf", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 2,0]}\n'
+From Arduino:
+b'40.00 7.70 7.11 3.41 7.45 46.94\r\n'
+To Algorithm:
+b'40.00 7.70 7.11 3.41 7.45 46.94\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffdf", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 1,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffdf", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 1,0]}\n'
+From Arduino:
+b'6.40 6.21 40.00 40.00 40.00 27.27\r\n'
+To Algorithm:
+b'6.40 6.21 40.00 40.00 40.00 27.27\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffff", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffc1ff83fff7fffffffffff", "obstacle": "00000000006000000000078008000100603f89000000000000200"}], "robotPosition":[9, 1,90]}\n'
+From Arduino:
+b'6.85 7.18 33.80 35.42 37.22 136.89\r\n'
+To Algorithm:
+b'6.85 7.18 33.80 35.42 37.22 136.89\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffe1ffc3fff7fffffffffff", "obstacle": "00000000006000000000078008000100403bc4400000000000080"}], "robotPosition":[10, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ff87ff0ffe1ffc3fff7fffffffffff", "obstacle": "00000000006000000000078008000100403bc4400000000000080"}], "robotPosition":[10, 1,90]}\n'
+From Arduino:
+b'7.53 7.81 22.97 23.14 24.79 365.50\r\n'
+To Algorithm:
+b'7.53 7.81 22.97 23.14 24.79 365.50\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ffc7ff8fff1ffe3fff7fffffffffff", "obstacle": "00000000006000000000078008000100200e7884000000000000800"}], "robotPosition":[11, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ffc7ff8fff1ffe3fff7fffffffffff", "obstacle": "00000000006000000000078008000100200e7884000000000000800"}], "robotPosition":[11, 1,90]}\n'
+From Arduino:
+b'6.60 7.18 14.46 11.34 14.99 3654.33\r\n'
+To Algorithm:
+b'6.60 7.18 14.46 11.34 14.99 3654.33\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ffe7ffcfff9fff3fff7fffffffffff", "obstacle": "0000000000600000000007800800010010038f10400000000000080"}], "robotPosition":[12, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3ffe7ffcfff9fff3fff7fffffffffff", "obstacle": "0000000000600000000007800800010010038f10400000000000080"}], "robotPosition":[12, 1,90]}\n'
+From Arduino:
+b'6.94 7.15 6.22 2.26 6.33 163.34\r\n'
+To Algorithm:
+b'6.94 7.15 6.22 2.26 6.33 163.34\n'
+From Algorithm:
+b'r83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffdfffbfff7fffffffffff", "obstacle": "000000000060000000000780080001000800e1e204000000000000800"}], "robotPosition":[13, 1,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffdfffbfff7fffffffffff", "obstacle": "000000000060000000000780080001000800e1e204000000000000800"}], "robotPosition":[13, 1,90]}\n'
+To Arduino:
+r83
+
+From Arduino:
+b'6.88 6.48 25.62 34.08 40.00 129.53\r\n'
+To Algorithm:
+b'6.88 6.48 25.62 34.08 40.00 129.53\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "000000000060000000000780080001000800e1f101000000000000100"}], "robotPosition":[13, 1,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "000000000060000000000780080001000800e1f101000000000000100"}], "robotPosition":[13, 1,180]}\n'
+From Arduino:
+b'6.94 6.82 14.99 40.00 40.00 110.19\r\n'
+To Algorithm:
+b'6.94 6.82 14.99 40.00 40.00 110.19\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "000000000060000000000780080001000800e1f101000000000000100"}], "robotPosition":[13, 2,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "000000000060000000000780080001000800e1f101000000000000100"}], "robotPosition":[13, 2,180]}\n'
+From Arduino:
+b'6.94 6.57 5.53 40.00 40.00 106.28\r\n'
+To Algorithm:
+b'6.94 6.57 5.53 40.00 40.00 106.28\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "000000000060000000000780080001000800e1f101000000000000100"}], "robotPosition":[13, 3,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8187f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "000000000060000000000780080001000800e1f101000000000000100"}], "robotPosition":[13, 3,180]}\n'
+From Arduino:
+b'40.00 40.00 40.00 40.00 40.00 27.27\r\n'
+To Algorithm:
+b'40.00 40.00 40.00 40.00 40.00 27.27\n'
+From Algorithm:
+b'f1'
+To Arduino:
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8197f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "0000000000300000000003c004000080040070f880800000000000080"}], "robotPosition":[13, 3,270]}'
+f1
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f8197f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "0000000000300000000003c004000080040070f880800000000000080"}], "robotPosition":[13, 3,270]}\n'
+From Arduino:
+b'40.00 40.00 35.59 40.00 40.00 29.22\r\n'
+To Algorithm:
+b'40.00 40.00 35.59 40.00 40.00 29.22\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "0000000000180000000001e0020000400200387c40400000000000040"}], "robotPosition":[12, 3,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "0000000000180000000001e0020000400200387c40400000000000040"}], "robotPosition":[12, 3,270]}\n'
+From Arduino:
+b'17.28 18.25 40.00 40.00 40.00 116.95\r\n'
+To Algorithm:
+b'17.28 18.25 40.00 40.00 40.00 116.95\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "0000000000180000000001e0020000400200387c40400000000000040"}], "robotPosition":[12, 3,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fff1ffe3fff7ffefffffffffffffffffffffff", "obstacle": "0000000000180000000001e0020000400200387c40400000000000040"}], "robotPosition":[12, 3,180]}\n'
+From Arduino:
+b'17.95 7.28 40.00 40.00 40.00 36.93\r\n'
+To Algorithm:
+b'17.95 7.28 40.00 40.00 40.00 36.93\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fff1fffbfff7ffefffffffffffffffffffffff", "obstacle": "0000000000180000000001e00200001000800e1f10100000000000010"}], "robotPosition":[12, 4,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fff1fffbfff7ffefffffffffffffffffffffff", "obstacle": "0000000000180000000001e00200001000800e1f10100000000000010"}], "robotPosition":[12, 4,180]}\n'
+From Arduino:
+b'7.56 8.52 40.00 40.00 40.00 15.01\r\n'
+To Algorithm:
+b'7.56 8.52 40.00 40.00 40.00 15.01\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fffdfffbfff7ffffffffffffffffffffffffff", "obstacle": "0000000000180000000001e000800004002101c3e202000000000000200"}], "robotPosition":[12, 5,180]}'
+To Arduino:
+f1
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ff8fffdfffbfff7ffffffffffffffffffffffffff", "obstacle": "0000000000180000000001e000800004002101c3e202000000000000200"}], "robotPosition":[12, 5,180]}\n'
+
+From Arduino:
+b'4.82 16.45 40.00 40.00 40.00 17.36\r\n'
+To Algorithm:
+b'4.82 16.45 40.00 40.00 40.00 17.36\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ffefffdfffbffffffffffffffffffffffffffffff", "obstacle": "00000000001800000000007800200001000020387c40400000000000040"}], "robotPosition":[12, 6,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83ffc7ffefffdfffbffffffffffffffffffffffffffffff", "obstacle": "00000000001800000000007800200001000020387c40400000000000040"}], "robotPosition":[12, 6,180]}\n'
+From Arduino:
+b'16.53 16.81 40.00 40.00 40.00 17.15\r\n'
+To Algorithm:
+b'16.53 16.81 40.00 40.00 40.00 17.15\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83fff7ffefffdffffffffffffffffffffffffffffffffff", "obstacle": "00000000001800000000001e00080000000004070f8808000000000000800"}], "robotPosition":[12, 7,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ff83fff7ffefffdffffffffffffffffffffffffffffffffff", "obstacle": "00000000001800000000001e00080000000004070f8808000000000000800"}], "robotPosition":[12, 7,180]}\n'
+From Arduino:
+b'16.90 17.56 40.00 40.00 40.00 81.41\r\n'
+To Algorithm:
+b'16.90 17.56 40.00 40.00 40.00 81.41\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ffbbfff7ffeffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000000000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 8,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e00ff01ffbbfff7ffeffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000000000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 8,180]}\n'
+From Arduino:
+b'40.00 40.00 14.99 11.64 15.63 93.12\r\n'
+To Algorithm:
+b'40.00 40.00 14.99 11.64 15.63 93.12\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e04ff09ffbbfff7ffeffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000000000000f0002000000000101c3e20200000000000020"}], "robotPosition":[12, 8,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e04ff09ffbbfff7ffeffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000000000000f0002000000000101c3e20200000000000020"}], "robotPosition":[12, 8,90]}\n'
+From Arduino:
+b'40.00 8.97 5.87 2.26 6.64 59.40\r\n'
+To Algorithm:
+b'40.00 8.97 5.87 2.26 6.64 59.40\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbbfff7ffeffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000180000000000003c00080000000004070f8808000000000000800"}], "robotPosition":[13, 8,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbbfff7ffeffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000180000000000003c00080000000004070f8808000000000000800"}], "robotPosition":[13, 8,90]}\n'
+From Arduino:
+b'6.40 6.60 23.70 31.66 40.00 129.53\r\n'
+To Algorithm:
+b'6.40 6.60 23.70 31.66 40.00 129.53\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 8,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 8,180]}\n'
+From Arduino:
+b'6.73 6.57 14.02 33.76 40.00 73.25\r\n'
+To Algorithm:
+b'6.73 6.57 14.02 33.76 40.00 73.25\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 9,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 9,180]}\n'
+From Arduino:
+b'6.85 6.57 4.77 29.52 40.00 106.28\r\n'
+To Algorithm:
+b'6.85 6.57 4.77 29.52 40.00 106.28\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 10,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 10,180]}\n'
+From Arduino:
+b'32.41 40.00 40.00 40.00 40.00 81.41\r\n'
+To Algorithm:
+b'32.41 40.00 40.00 40.00 40.00 81.41\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 10,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e06ff0dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000018000002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 10,270]}\n'
+From Arduino:
+b'39.48 40.00 40.00 40.00 40.00 84.81\r\n'
+To Algorithm:
+b'39.48 40.00 40.00 40.00 40.00 84.81\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e0eff1dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000001800000080000001e000400000000020387c40400000000000040"}], "robotPosition":[12, 10,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e0eff1dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000001800000080000001e000400000000020387c40400000000000040"}], "robotPosition":[12, 10,270]}\n'
+From Arduino:
+b'17.28 18.14 34.38 40.00 40.00 116.95\r\n'
+To Algorithm:
+b'17.28 18.14 34.38 40.00 40.00 116.95\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e0eff1dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000001800000080000001e000400000000020387c40400000000000040"}], "robotPosition":[12, 10,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc07e0eff1dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000001800000080000001e000400000000020387c40400000000000040"}], "robotPosition":[12, 10,180]}\n'
+From Arduino:
+b'19.08 7.28 22.97 40.00 40.00 101.65\r\n'
+To Algorithm:
+b'19.08 7.28 22.97 40.00 40.00 101.65\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc77e0eff1dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000043000000100000003c00080000000004070f8808000000000000800"}], "robotPosition":[12, 11,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe03fc77e0eff1dffbffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000043000000100000003c00080000000004070f8808000000000000800"}], "robotPosition":[12, 11,180]}\n'
+From Arduino:
+b'7.53 7.84 13.49 40.00 40.00 89.18\r\n'
+To Algorithm:
+b'7.53 7.84 13.49 40.00 40.00 89.18\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff01fe33fc77e0eff1ffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000010c000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 12,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff01fe33fc77e0eff1ffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000010c000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 12,180]}\n'
+From Arduino:
+b'5.95 5.70 4.72 40.00 40.00 111.54\r\n'
+To Algorithm:
+b'5.95 5.70 4.72 40.00 40.00 111.54\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff19fe33fc77e0ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000431000200040000000f0002000000000101c3e202000000000000200"}], "robotPosition":[12, 13,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff19fe33fc77e0ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000431000200040000000f0002000000000101c3e202000000000000200"}], "robotPosition":[12, 13,180]}\n'
+From Arduino:
+b'40.00 40.00 16.00 16.62 40.00 106.28\r\n'
+To Algorithm:
+b'40.00 40.00 16.00 16.62 40.00 106.28\n'
+From Algorithm:
+b'f1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff19fe33fc77e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000004384000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 13,270]}'
+To Arduino:
+f1
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff19fe33fc77e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000004384000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 13,270]}\n'
+From Arduino:
+b'40.00 40.00 6.58 40.00 40.00 116.95\r\n'
+To Algorithm:
+b'40.00 40.00 6.58 40.00 40.00 116.95\n'
+From Algorithm:
+b'l83'
+To Arduino:
+l83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff39fe73fcf7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 13,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff39fe73fcf7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 13,270]}\n'
+From Arduino:
+b'16.45 17.09 40.00 40.00 40.00 89.18\r\n'
+To Algorithm:
+b'16.45 17.09 40.00 40.00 40.00 89.18\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f80ff39fe73fcf7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 13,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f80ff39fe73fcf7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 13,180]}\n'
+From Arduino:
+b'18.05 6.54 40.00 40.00 40.00 7.57\r\n'
+To Algorithm:
+b'18.05 6.54 40.00 40.00 40.00 7.57\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81b7f9cff39fe73fcf7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000010e1000200040000000f0002000000000101c3e202000000000000200"}], "robotPosition":[11, 14,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81b7f9cff39fe73fcf7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000010e1000200040000000f0002000000000101c3e202000000000000200"}], "robotPosition":[11, 14,180]}\n'
+From Arduino:
+b'6.94 30.32 31.66 33.76 39.74 173.77\r\n'
+To Algorithm:
+b'6.94 30.32 31.66 33.76 39.74 173.77\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81f7f9cff39fe7ffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 15,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81f7f9cff39fe7ffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 15,180]}\n'
+From Arduino:
+b'30.53 33.15 22.28 22.49 25.97 84.81\r\n'
+To Algorithm:
+b'30.53 33.15 22.28 22.49 25.97 84.81\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81f7f9cff3ffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000087080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[11, 16,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81f7f9cff3ffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000087080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[11, 16,180]}\n'
+From Arduino:
+b'31.47 32.15 12.88 10.19 14.33 83.94\r\n'
+To Algorithm:
+b'31.47 32.15 12.88 10.19 14.33 83.94\n'
+From Algorithm:
+b'l83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81f7f9ffffffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 17,180]}'
+To Arduino:
+l83
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f81f7f9ffffffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 17,180]}\n'
+From Arduino:
+b'40.00 40.00 26.51 27.62 29.09 13.74\r\n'
+To Algorithm:
+b'40.00 40.00 26.51 27.62 29.09 13.74\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81f7f9ffffffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 17,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81f7f9ffffffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[11, 17,90]}\n'
+From Arduino:
+b'40.00 11.38 17.39 14.86 19.21 12.74\r\n'
+To Algorithm:
+b'40.00 11.38 17.39 14.86 19.21 12.74\n'
+From Algorithm:
+b'f1'
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81f7f9ffffffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[12, 17,90]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81f7f9ffffffffffff7e3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000087080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[12, 17,90]}\n'
+From Arduino:
+b'11.90 12.73 7.62 4.36 9.03 12.30\r\n'
+To Algorithm:
+b'11.90 12.73 7.62 4.36 9.03 12.30\n'
+From Algorithm:
+b'r83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81f7f9fffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000008384000800100000003c00080000000004070f8808000000000000800"}], "robotPosition":[13, 17,90]}'
+To Arduino:
+To Android:
+b'{"map": [{"length": 300, "explored": "f81f7f9fffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000008384000800100000003c00080000000004070f8808000000000000800"}], "robotPosition":[13, 17,90]}\n'
+r83
+
+From Arduino:
+b'6.85 7.81 10.92 7.15 11.83 129.53\r\n'
+To Algorithm:
+b'6.85 7.81 10.92 7.15 11.83 129.53\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81fff9fffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000041c2000400080000001e000400000000020387c404000000000000400"}], "robotPosition":[13, 17,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81fff9fffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000041c2000400080000001e000400000000020387c404000000000000400"}], "robotPosition":[13, 17,180]}\n'
+From Arduino:
+b'7.06 6.79 6.11 2.08 6.06 116.95\r\n'
+To Algorithm:
+b'7.06 6.79 6.11 2.08 6.06 116.95\n'
+From Algorithm:
+b'r83'
+To Arduino:
+r83
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000107080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 18,180]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f81fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000107080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 18,180]}\n'
+From Arduino:
+b'6.70 6.33 40.00 40.00 40.00 15.63\r\n'
+To Algorithm:
+b'6.70 6.33 40.00 40.00 40.00 15.63\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f81fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000107080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 18,270]}'
+To Arduino:
+f1
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f81fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000107080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[13, 18,270]}\n'
+From Arduino:
+b'7.20 7.84 40.00 40.00 40.00 470.76\r\n'
+To Algorithm:
+b'7.20 7.84 40.00 40.00 40.00 470.76\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f83fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000008384000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f83fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "000000000000000008384000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[12, 18,270]}\n'
+From Arduino:
+b'7.20 7.38 40.00 40.00 40.00 1011.67\r\n'
+To Algorithm:
+b'7.20 7.38 40.00 40.00 40.00 1011.67\n'
+From Algorithm:
+b'c\nf1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f87fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000041c2000400080000001e000400000000020387c40400000000000040"}], "robotPosition":[11, 18,270]}'
+To Arduino:
+c
+
+To Android:
+b'{"map": [{"length": 300, "explored": "f87fffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000041c2000400080000001e000400000000020387c40400000000000040"}], "robotPosition":[11, 18,270]}\n'
+To Arduino:
+f1
+
+From Arduino:
+b'6.85 6.91 40.00 40.00 40.00 3654.33\r\n'
+To Algorithm:
+b'6.85 6.91 40.00 40.00 40.00 3654.33\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f8ffffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000020e1000200040000000f0002000000000101c3e20200000000000020"}], "robotPosition":[10, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f8ffffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "0000000000000000020e1000200040000000f0002000000000101c3e20200000000000020"}], "robotPosition":[10, 18,270]}\n'
+From Arduino:
+b'7.16 7.18 40.00 40.00 40.00 24.89\r\n'
+To Algorithm:
+b'7.16 7.18 40.00 40.00 40.00 24.89\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "f9ffffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000107080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[9, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "f9ffffffffffffffffffe3ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000107080010002000000078001000000000080e1f10100000000000010"}], "robotPosition":[9, 18,270]}\n'
+From Arduino:
+b'6.20 5.70 40.00 40.00 40.00 26.13\r\n'
+To Algorithm:
+b'6.20 5.70 40.00 40.00 40.00 26.13\n'
+From Algorithm:
+b'c\nf1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "fbffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000083c2000400080000001e000400000000020387c404000000000000400"}], "robotPosition":[8, 18,270]}'
+To Arduino:
+c
+
+To Android:
+b'{"map": [{"length": 300, "explored": "fbffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000083c2000400080000001e000400000000020387c404000000000000400"}], "robotPosition":[8, 18,270]}\n'
+To Arduino:
+f1
+
+From Arduino:
+b'6.49 6.66 40.00 40.00 40.00 25.97\r\n'
+To Algorithm:
+b'6.49 6.66 40.00 40.00 40.00 25.97\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffefffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[7, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffefffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f080010002000000078001000000000080e1f101000000000000100"}], "robotPosition":[7, 18,270]}\n'
+From Arduino:
+b'6.85 6.91 40.00 40.00 40.00 25.97\r\n'
+To Algorithm:
+b'6.85 6.91 40.00 40.00 40.00 25.97\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[6, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[6, 18,270]}\n'
+From Arduino:
+b'7.20 6.79 40.00 40.00 40.00 25.52\r\n'
+To Algorithm:
+b'7.20 6.79 40.00 40.00 40.00 25.52\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[5, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[5, 18,270]}\n'
+From Arduino:
+b'6.40 6.24 36.55 35.08 37.22 25.97\r\n'
+To Algorithm:
+b'6.40 6.24 36.55 35.08 37.22 25.97\n'
+From Algorithm:
+b'c\nf1'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[4, 18,270]}'
+To Arduino:
+c
+
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[4, 18,270]}\n'
+To Arduino:
+f1
+
+From Arduino:
+b'6.73 6.66 27.45 25.91 27.65 35.01\r\n'
+To Algorithm:
+b'6.73 6.66 27.45 25.91 27.65 35.01\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[3, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[3, 18,270]}\n'
+From Arduino:
+b'7.06 6.91 16.71 13.43 16.39 73.25\r\n'
+To Algorithm:
+b'7.06 6.91 16.71 13.43 16.39 73.25\n'
+From Algorithm:
+b'c\nf1'
+To Arduino:
+c
+
+To Arduino:
+f1
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[2, 18,270]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[2, 18,270]}\n'
+From Arduino:
+b'6.51 6.57 7.20 3.41 7.20 76.12\r\n'
+To Algorithm:
+b'6.51 6.57 7.20 3.41 7.20 76.12\n'
+From Algorithm:
+b'r83'
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[1, 18,270]}'
+To Arduino:
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[1, 18,270]}\n'
+r83
+
+From Arduino:
+b'6.25 5.82 40.00 40.00 40.00 111.54\r\n'
+To Algorithm:
+b'6.25 5.82 40.00 40.00 40.00 111.54\n'
+From android:
+b'FS|'
+To Algorithm:
+b'FS|\n'
+From Algorithm:
+b'gf04r33h07r33f02l33h02l33f01r33h01l33f02'
+To Arduino:
+gf04r33h07r33f02l33h02l33f01r33h01l33f02
+
+From Algorithm:
+b'M{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[1, 18,0]}'
+To Android:
+b'{"map": [{"length": 300, "explored": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "obstacle": "00000000000000000041f84000800100000003c00080000000004070f880800000000000080"}], "robotPosition":[1, 18,0]}\n'
+From android:
+b'RS|'
+To Algorithm:
+b'RS|\n'
+From android:
+b'FS|'
+To Algorithm:
+b'FS|\n'
+^CTraceback (most recent call last):
+  File "main.py", line 33, in <module>
+    init()
+  File "main.py", line 27, in init
+    multiprocess_communications.start()
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 115, in start
+    self._allow_reconnection()
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 137, in _allow_reconnection
+    if not self.write_process.is_alive():
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 156, in is_alive
+    returncode = self._popen.poll()
+  File "/usr/lib/python3.7/multiprocessing/popen_fork.py", line 28, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+KeyboardInterrupt
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 408, in _write_target
+    if len(self.message_deque)>0:
+  File "<string>", line 2, in __len__
+  File "/usr/lib/python3.7/multiprocessing/managers.py", line 795, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 404, in _send_bytes
+    self._send(header + buf)
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+KeyboardInterrupt
+Process Process-6:
+Process Process-3:
+Process Process-4:
+Process Process-2:
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 239, in _read_algorithm
+    raw_message = self.algorithm.read()
+  File "/home/pi/Desktop/rpi/src/communicator/Algorithm.py", line 78, in read
+    message = self.client_sock.recv(ALGORITHM_SOCKET_BUFFER_SIZE).strip()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+KeyboardInterrupt
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 370, in _read_android
+    raw_message = self.android.read()
+  File "/home/pi/Desktop/rpi/src/communicator/Android.py", line 86, in read
+    message = self.client_sock.recv(ANDROID_SOCKET_BUFFER_SIZE).strip()
+  File "<string>", line 3, in recv
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 437, in _write_android
+    if len(self.to_android_message_deque)>0:
+  File "<string>", line 2, in __len__
+  File "/usr/lib/python3.7/multiprocessing/managers.py", line 795, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 404, in _send_bytes
+    self._send(header + buf)
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/Desktop/rpi/src/communicator/MultiProcessCommsV2.py", line 216, in _read_arduino
+    raw_message = self.arduino.read()
+  File "/home/pi/Desktop/rpi/src/communicator/Arduino.py", line 64, in read
+    message = self.connection.readline()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 483, in read
+    ready, _, _ = select.select([self.fd, self.pipe_abort_read_r], [], [], timeout.time_left())
+KeyboardInterrupt

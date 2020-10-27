@@ -31,9 +31,6 @@ float Sensor::FMDistance(int method) {
   if(distance > 40 || distance < 0){
     return 40;
   } else {
-      if(distance < 19){
-        distance = distance - 2;
-      } 
     return distance;
   }
 }
@@ -134,6 +131,7 @@ void floatsort(float a[], int size){
       }
     }
 }
+
 float Sensor::RDistance(int method) {
   float distance;
   
@@ -168,13 +166,13 @@ float Sensor::RDistance(int method) {
 int Sensor::convertLong(float distance) {
   if(0 <= distance && distance <= 11){
     return 0;
-  } else if ( 11 < distance && distance <= 17){ 
+  } else if ( 11 < distance && distance <= 18){ 
     return 1;
-  } else if ( 17 < distance && distance <= 27){ 
+  } else if ( 18 < distance && distance <= 28){ 
     return 2;
-  } else if ( 27 < distance && distance <= 37){ 
+  } else if ( 28 < distance && distance <= 38){ 
     return 3;
-  } else if ( 37 < distance && distance <= 47){ 
+  } else if ( 38 < distance && distance <= 48){ 
     return 4;
   } else{
     return 5;
